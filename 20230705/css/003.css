@@ -1,0 +1,43 @@
+body{
+    background-color: aquamarine;
+}
+.my{
+    color: slateblue;
+}
+/* id선택자 */
+#title{
+    text-decoration: underline;
+}
+
+/* 모든p가 바뀜 (형제 인접 선택자) */
+h2+p{}
+/* class my 다음 p만 바뀜 */
+.my+p{}
+
+/* 자손 선택자 */
+.sect2 strong{
+    background-color: yellow;
+}
+
+/*자식 선택자*/
+.sect2> strong{
+    background-color: yellow;
+}
+
+.sect2 *{
+    border: 2pc solid red;
+}
+
+/* 만약 */
+.sect2 > *{
+    border: 2pc solid red;
+}
+/* 이렇게 된다면 직계 자손들 h2,strong(첫번째것),p만 border 생성 */
+
+
+
+/* 묶어서 한번에 속성 부여 */
+.my + p,
+.sect3 p{
+    background-color: beige;
+}
