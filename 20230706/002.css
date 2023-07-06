@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('./font/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: Pretendard-Regular, 'Times New Roman', Dotum, '돋움', sans-serif;
+}
+
+h2{
+    font-size: 40px;
+}
+
+h3{
+    font-size: 1em;
+}
+
+.parents{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+}
+
+.child{
+    width: 50%;
+    /* 200px * 0.5 = 100px */
+    background-color: salmon;
+}
