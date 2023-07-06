@@ -1,0 +1,18 @@
+/* color 색상 */
+h1{
+    color: royalblue;
+    font-family: 'Caprasimo', cursive;
+}
+h1,h2{
+    font-weight: normal;
+}
+
+/* currentColor 부모의 color값을 상속받는다. */
+strong{
+    border-bottom: 3px solid currentColor;
+}
+
+h2 {
+    color: #999;
+    font-family: 'Pretendard-Regular', Verdana, sans-serif;
+}
