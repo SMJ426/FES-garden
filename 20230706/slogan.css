@@ -16,7 +16,9 @@ h1 .name{
 *{
     background-color: bisque;
 }
-
+.why{
+    text-align: center;
+}
 .main-box{
     border: 2px solid rgb(0, 0, 0);
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
