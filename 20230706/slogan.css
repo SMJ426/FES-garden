@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'KBO-Dia-Gothic_bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.myslogun .slogun-strong{
+    font-size: 50px;
+}
+h1 .name{
+    color: blueviolet;
+    font-size: 50px;
+    text-decoration: blueviolet underline wavy 3px;
+}
+*{
+    background-color: bisque;
+}
+
+.main-box{
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.myslogun strong{
+    text-shadow: 1px 1px 1px red;
+    text-decoration: red underline wavy 1px;
+}
+
+.myslogun{
+    text-align: center;
+}
