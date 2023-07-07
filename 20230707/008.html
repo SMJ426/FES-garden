@@ -7,14 +7,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>border</title>
 <style>
-    .box1 {
-    width: 100px;
+    div{
+        width: 100px;
     height: 100px;
     background-color: royalblue;
+    }
+
+    .box1 {
     border: 10px dashed gold;
     border-style: dashed double solid dotted;
-    border-radius: 50px 0 10px 20px;
+    border-radius: 60px 60px 60px 60px;
     }
+
+    .box2{
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .box3{
+        border-radius: 100px 0px 0px 0px;
+    }
+
+    .box4{
+        border-radius: 100px 0px 100px 0px;
+    }
+
+    .box5{
+        border-radius: 0px 50px 0px 50px;
+    }
+
+    .box6{
+        height: 50px;
+        border-radius: 100px 100px 0 0
+    }
+
 </style>
 </head>
 
@@ -22,6 +47,15 @@
 <div class="box1">
     box1
 </div>
+
+<div class="box2">
+    box2
+</div>
+
+<div class="box3">box3</div>
+<div class="box4">box4</div>
+<div class="box5">box5</div>
+<div class="box6">box6</div>
 
 </body>
 
