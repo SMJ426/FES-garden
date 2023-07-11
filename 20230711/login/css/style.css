@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    flex-shrink: 0;
+}
+
+.mainbox {
+    width: 350px;
+    height: 140px;
+    border-radius: 5px;
+    border: 1px solid #DBDBDB;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.content {
+    color: black;
+    text-align: center;
+    font-family: 'Spoqa Han Sans Neo';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.bottom-side {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.login-button {
+    border-radius: 4px;
+    background: #711BFF;
+    width: 318px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.login-button img {
+    width: 64px;
+    height: 18px;
+}
+
+.id-pw {
+    background-color: white;
+    border-style: hidden;
+    
+
+}
+.id-pw img {
+    width: 16px;
+    height: 16px;
+}
+
+.new-user {
+    background-color: white;
+    border-style: hidden;
+}
+
+.new-user img {
+    width: 16px;
+    height: 16px;
+}

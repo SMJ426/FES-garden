@@ -37,25 +37,40 @@
     .wrap>div {
         height: 300px;
     }
+    .wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+    .left-side, 
+    .center{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .right-side {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
     </style>
 </head>
 
 <body>
     <div class="wrap">
-    <div class="left-side">
-        <div class="box blue">A</div>
-        <div class="box pink">B</div>
-        <div class="box yellow">C</div>
-    </div>
-    <div class="center">
-        <div class="box blue">D</div>
-        <div class="box yellow">E</div>
-    </div>
-    <div class="right-side">
-        <div class="box blue">F</div>
-        <div class="box pink">G</div>
-        <div class="box yellow">H</div>
-    </div>
+        <div class="left-side">
+            <div class="box blue">A</div>
+            <div class="box pink">B</div>
+            <div class="box yellow">C</div>
+        </div>
+        <div class="center">
+            <div class="box blue">D</div>
+            <div class="box yellow">E</div>
+        </div>
+        <div class="right-side">
+            <div class="box blue">F</div>
+            <div class="box pink">G</div>
+            <div class="box yellow">H</div>
+        </div>
     </div>
 
 </body>
