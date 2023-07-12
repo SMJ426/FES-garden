@@ -1,72 +1,50 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 200px;
-    border: 1px solid black;
-    flex-shrink: 0;
+body{
+    background-color: aqua;
 }
 
-.mainbox {
+div,
+p {
+    margin: 0;;
+}
+
+.big-box {
     width: 350px;
     height: 140px;
     border-radius: 5px;
     border: 1px solid #DBDBDB;
-    background-color: #FFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    background: #FFF;
 }
 
-.content {
-    color: black;
-    text-align: center;
-    font-family: 'Spoqa Han Sans Neo';
+.big-box p {
+    margin-top: 19px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    color: #000;
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
     font-size: 12px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
 }
 
-.bottom-side {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.login-button {
-    border-radius: 4px;
-    background: #711BFF;
+.login-box {
+    background-color: red;
     width: 318px;
     height: 40px;
-    display: flex;
-    justify-content: center;
-
+    border-radius: 4px;
+    background: #711BFF;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 10px;
 }
-
-.login-button img {
+.login-box img {
     width: 64px;
     height: 18px;
+    margin-top: 10px;
+    margo
 }
 
-.id-pw {
-    background-color: white;
-    border-style: hidden;
-    
-
-}
-.id-pw img {
-    width: 16px;
-    height: 16px;
-}
-
-.new-user {
-    background-color: white;
-    border-style: hidden;
-}
-
-.new-user img {
-    width: 16px;
-    height: 16px;
-}
