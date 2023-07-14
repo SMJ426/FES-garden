@@ -1,6 +1,53 @@
-div {
-  background-color: orange;
+h1, p, ul, p {
+  font-size: unset;
+  font-weight: unset;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-image: url(./images/background4.png);
+}
+
+.wrapper {
+  background-color: salmon;
   width: 800px;
   height: auto;
-  margin: 0 auto;
+  margin: 100px auto;
+}
+
+.header {
+  background-image: url(./images/background02.png);
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: white;
+  }
+
+.header img {
+  margin: 0px auto;
+  display: block;
+}
+
+.header h1 {
+  text-align: center;
+  font-size: 100px;
+}
+
+.header p {
+  border-top: 5px solid white;
+  padding: 10px 20px;
+  width: fit-content;
+  margin: 0px auto;
+}
+
+.section {
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  background-image: url(./images/icon-information.png);
+  background-repeat: no-repeat;
+  background-position: right ;
 }
