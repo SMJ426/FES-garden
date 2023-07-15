@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수능성적표 만들기(table과제)</title>
+    <style>
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      tr, th, td {
+        border: 2px solid black;
+        padding: 12px;
+        text-align: center;
+      }
+
+      .col {
+        width: 120px;
+      }
+      
+      tfoot tr {
+        font-weight: bold;
+      }
+
+      caption {
+        caption-side: bottom;
+        margin: 20px;
+        width: fit-content;
+        margin: 15px auto;
+      }
+      
+    </style>
+</head>
+<body>
+    <h1>[해보기] 표만들기</h1>
+    <table>
+      <colgroup>
+        <col class="col first">
+        <col class="col two">
+        <col class="col three">
+        <col class="col four">
+        <col class="col five">
+        <col class="col six">
+        <col class="col seven">
+        <col class="col eight">
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th rowspan="2">한국사 영역</th>
+          <th>국어 영역</th>
+          <th>수학 영역</th>
+          <th rowspan="2">영어 영역</th>
+          <th colspan="2">탐구 영역</th>
+          <!-- <th>탐구 영역</th> -->
+          <th>제 2 외국어<br>/한문 영역</th>
+        </tr>
+        
+        <tr>
+          <th>선택과목</th>
+          <!-- <th>한국사 영역</th> -->
+          <th>화법과 작문</th>
+          <th>확률과 통계</th>
+          <!-- <th>영어 영역</th> -->
+          <th>생활과 윤리</th>
+          <th>지구과학 1</th>
+          <th>독일어</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><strong>표준점수</strong></td>
+          <td rowspan="2"></td>
+          <td>131</td>
+          <td>137</td>
+          <td rowspan="2"></td>
+          <td>53</td>
+          <td>64</td>
+          <td rowspan="2"></td>
+        </tr>
+  
+        <tr>
+          <td><strong>백분위</strong></td>
+          <!-- <td></td> -->
+          <td>93</td>
+          <td>95</td>
+          <!-- <td></td> -->
+          <td>75</td>
+          <td>93</td>
+          <!-- <td></td> -->
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>등급</td>
+          <td>2</td>
+          <td>2</td>
+          <td>2</td>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+      </tfoot>
+
+      <caption>2023 학년도 대학수능능력시험 성적통지표</caption>
+    </table>
+</body>
+</html>
