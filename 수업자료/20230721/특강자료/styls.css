@@ -1,0 +1,10 @@
+
+
+.fruit {
+  background-color: gold;
+  display: inline-block; 
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  border-radius: 50%;
+} 
