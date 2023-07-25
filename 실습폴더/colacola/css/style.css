@@ -1,0 +1,51 @@
+body {
+  background-color: skyblue;
+}
+
+/*------------- reset ---------------*/
+body,
+h1,
+h2,
+p,
+ul,
+li,
+button {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  border: 0;
+  background: none;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/*----------CSS스타일 적용---------*/
+h1 {
+  text-align: center;
+}
