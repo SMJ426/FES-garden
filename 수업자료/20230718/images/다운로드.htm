@@ -1,0 +1,769 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><link rel="canonical" href="https://mulder21c.io/screen-hide-text/"><link rel="shortcut icon" href="/images/favicon.png"><title>접근 가능한 숨김 텍스트 - The Tracks of mulder21c</title><link rel="prev" href="https://mulder21c.io/top-5-questions-asked-in-accessibility-trainings/"/><link rel="next" href="https://mulder21c.io/resolve-gitbook-watch-issue/"/><link rel="preload" as="image" href="https://mulder21c.io/screen-hide-text/reading-glass.large@1.webp"/><link rel="preconnect" href="https://cdn.mulder21c.io"/><meta name="description" content="퍼블리싱 작업을 진행하다보면 종종 숨김 텍스트를 사용해야 하는 상황에 맞닥뜨릴 때가 많다. 이미 여러 가지 방법들이 인터넷에 공개되어 있고 널려있지만, 아쉽게도 여전히 실제로 작업을 담당하는 이들이 숨김 텍스트를 어떻게 적용하느냐에 따른 사이드 이펙트는 전혀 고려하지 않거나 모르는 경우가 많은 듯 하다.">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="접근 가능한 숨김 텍스트 - The Tracks of mulder21c">
+<meta property="og:url" content="https://mulder21c.io/screen-hide-text/">
+<meta property="og:site_name" content="The Tracks of mulder21c">
+<meta property="og:description" content="퍼블리싱 작업을 진행하다보면 종종 숨김 텍스트를 사용해야 하는 상황에 맞닥뜨릴 때가 많다. 이미 여러 가지 방법들이 인터넷에 공개되어 있고 널려있지만, 아쉽게도 여전히 실제로 작업을 담당하는 이들이 숨김 텍스트를 어떻게 적용하느냐에 따른 사이드 이펙트는 전혀 고려하지 않거나 모르는 경우가 많은 듯 하다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://mulder21c.io/screen-hide-text/reading-glass.large@1.webp">
+<meta property="og:image" content="https://cdn.mulder21c.io/images/heros/41108552022.webp">
+<meta property="og:image" content="https://mulder21c.io/screen-hide-text/text-indent-firefox.webp">
+<meta property="article:published_time" content="2019-03-22T14:55:46.000Z">
+<meta property="article:modified_time" content="2021-05-01T11:50:14.000Z">
+<meta property="article:author" content="멀더끙">
+<meta property="article:tag" content="웹 접근성">
+<meta property="article:tag" content="accessibility">
+<meta property="article:tag" content="hidden">
+<meta property="article:tag" content="스크린리더">
+<meta property="article:tag" content="sr-only">
+<meta property="article:tag" content="visually hidden">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mulder21c.io/screen-hide-text/reading-glass.large@1.webp"><link rel="stylesheet" href="/css/index.css" media="screen"/><script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","@name":"접근 가능한 숨김 텍스트 - The Tracks of mulder21c","url":"https://mulder21c.io/screen-hide-text/","description":"접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 여행 러버,\n아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는\n멀더끙의 블로그입니다.\n","copyrightHolder":{"@type":"Person","name":"멀더끙"},"image":{"@type":"imageObject","url":"https://mulder21c.io/screen-hide-text/reading-glass.large@1.webp","width":"3200px","height":"1800px"},"author":{"@type":"Person","name":"멀더끙","image":{"@type":"imageObject","url":"https://mulder21c.io/images/favicon.png"},"url":"https://www.facebook.com/mulder21c"},"headline":"접근 가능한 숨김 텍스트","keywords":"웹 접근성, accessibility, hidden, 스크린리더, sr-only, visually hidden","dateCreated":"2019-03-22T14:55:46.000Z","dateModified":"2021-05-01T11:50:14.000Z"}</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-9BSP65JTBX"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag(`js`, new Date());
+gtag(`config`, `G-9BSP65JTBX`);
+</script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5055523791773672" crossorigin="anonymous"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="/css/vendor/pannellum.css" /><script>function makeGlobalVar(e={}){for(const[o,t]of Object.entries(e))window[o]=t}makeGlobalVar({themePrefix:"crpdm",themeIdentifier:"theme",getThemeColor:function(){const e=JSON.parse(localStorage.getItem(window.themeIdentifier));return e&&"auto"!==e.colorScheme?e.colorScheme:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}});</script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="The Tracks of mulder21c" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="The Tracks of mulder21c" type="application/rss+xml">
+</head><body><header class="_header"><div class="crpdm-title-bar crpdm-title-bar"><button class="crpdm-btn-icon crpdm-btn-icon--medium crpdm-btn-icon--ghost crpdm-btn-icon--icon-only crpdm-btn-menu" type="button" aria-label="open" aria-controls="slide-nav" aria-haspopup="dialog"><svg class="crpdm-svg-icon crpdm-btn-icon__icon" focusable="false" aria-hidden="true"><use xlink:href="https://mulder21c.io/images/solid.svg#angle-right"></use></svg></button><h1 class="crpdm-title-bar__title"><a href="/">The Tracks of mulder21c</a></h1></div></header><div class="_container" role="main"><div class="crpdm-hero crpdm-hero--post" aria-hidden="true"><picture role="none"><source media="(max-width: 760px)" srcset="https://mulder21c.io/screen-hide-text/reading-glass.small@2.webp 2x, https://mulder21c.io/screen-hide-text/reading-glass.small@1.webp 1x" type="image/webp" width="760" height="428"/><source media="(max-width: 1280px)" srcset="https://mulder21c.io/screen-hide-text/reading-glass.large@2.webp 2x, https://mulder21c.io/screen-hide-text/reading-glass.large@1.webp 1x" type="image/webp" width="1280" height="720"/><source media="(max-width: 760px)" srcset="https://mulder21c.io/screen-hide-text/reading-glass.small@2.jpg 2x, https://mulder21c.io/screen-hide-text/reading-glass.small@1.jpg 1x" type="image/jpeg" width="760" height="428"/><source media="(max-width: 1280px)" srcset="https://mulder21c.io/screen-hide-text/reading-glass.large@2.jpg 2x, https://mulder21c.io/screen-hide-text/reading-glass.large@1.jpg 1x" type="image/jpeg" width="1280" height="720"/><img class="crpdm-hero__image" src="https://mulder21c.io/screen-hide-text/reading-glass.webp" alt="" width="3200" height="1800" role="none"/></picture></div><article class="crpdm-article"><div class="crpdm-article__header"><h1 class="crpdm-heading--lv-1 crpdm-article__heading" id="접근-가능한-숨김-텍스트">접근 가능한 숨김 텍스트</h1><div class="crpdm-article-meta"><span class="crpdm-category crpdm-article-meta__categories"><span class="crpdm-category__label" role="img" aria-label="분류">📂</span><span class="crpdm-category__list" role="list"><span class="crpdm-category__content" role="listitem"><a href="https://mulder21c.io/categories/개발노트/">개발노트</a></span><span class="crpdm-category__content" role="listitem"><span class="crpdm-category__separator" aria-hidden="true"><svg class="crpdm-svg-icon" focusable="false"><use xlink:href="https://mulder21c.io/images/solid.svg#angle-right"></use></svg></span><a href="https://mulder21c.io/categories/개발노트/a11y/">A11Y</a></span></span></span><span class="crpdm-datetime crpdm-article-meta__date"><span class="crpdm-datetime__label" role="img" aria-label="발행일">📆</span><time class="crpdm-datetime__time" id="ma96ognui8s" datetime="2019-03-22">2019. 03. 22</time></span><span class="crpdm-datetime crpdm-article-meta__updated"><span class="crpdm-datetime__label" role="img" aria-label="업데이트">Updated</span><time class="crpdm-datetime__time" id="cp08did6mrg" datetime="2021-05-01">2021. 05. 01</time></span></div></div><div class="crpdm-article-content"><h2 id="숨김-텍스트">숨김 텍스트</h2>
+<p>오래동안 묵어있던 글감을 다시 꺼냈다. 다양한(?) 짓거리를 포스팅하려고 하다 결국은 포기하고
+단순하게 포스팅 하기로… <span role="img" aria-label="긁적긁적"><span aria-hidden="true" class="txt-emoticon">= _=a</span></span></p>
+<p>퍼블리싱 작업을 진행하다보면 종종 숨김 텍스트를 사용해야 하는 상황에 맞닥뜨릴 때가 많다.</p>
+<p>IR(Image Replace) 기법을 사용해야 할 때가 그 중 대표적인 한 가지이고, 기획 문서나
+디자인 시안에는 존재하지 않지만 문맥 상 혹은 문서 구조 상 숨겨져 있는 제목을 넣어주어야
+할 경우라던가, 혹은 바로 위에 보이는 것 처럼 이모티콘(?)을 사용하면서 이 이모티콘에 대한
+적절한 대체 텍스트를 제공해야 할 때가 바로 그러한 경우다.</p>
+<p>이미 여러 가지 방법들이 인터넷에 공개되어 있고 널려있지만, 아쉽게도 여전히 실제로 작업을
+담당하는 이들이 숨김 텍스트를 어떻게 적용하느냐에 따른 사이드 이펙트는 전혀 고려하지 않거나
+모르는 경우가 많은 듯 하다.</p>
+<p>일전에도 포스팅 한 게시글 중에 녹아 있는 내용이기는 하지만, 퍼블리셔가 눈에 보이는 결과만
+나오면 된다는 식으로 작업물을 만드니 어쩌면 당연한 결과이기도 하다.</p>
+<h3 id="숨김으로-인해-발생되는-문제">숨김으로 인해 발생되는 문제</h3>
+<p>문제는 접근성이다.</p>
+<p>웹 사이트를 소비하는 소비 주체는 시각이 온전한 사람만이 아니다. 더불어 사람만이 소비하는 것도
+역시 아니다. 웹 사이트 접근을 통해 전달받은 <code>text/html</code>스트림은 브라우저로 전달되어
+인간에게 전달되기도 하지만 검색엔진에 전달되어 검색엔진이 내용을 수집하게 되기도 한다.</p>
+<p>어쨌든 숨김 텍스트에 있어서 가장 크게 발생되는 문제는 접근성의 문제인데, 여기서 또 다른
+문제가 접근성을 위한 숨김 텍스트라고 하면 오로지 시각만을 생각한다는 문제이다.</p>
+<p>숨김 텍스트로 일어는 문제는 단순히 시각에만 있는 문제가 아니라, 어떻게 구현하느냐에 따라
+초점 이동에 대한 문제도 발생하게 된다.</p>
+<p>만일, ‘접근성 = 스크린리더 대응’라고만 생각했다면 접근성을 모르고 있을 확률이
+다분히 높다. 알고 있다고 말하는 것은 어쩌면 KWCAG
+      <span class="footnote-ref">
+        <a
+          href="#fn1"
+          id="fnref1"
+          role="doc-noteref"
+          aria-label="Go to footnote 1"
+        >
+          [1]
+        </a>
+      </span>
+    에서 언급된 여러 지침들을 실질적으로
+왜 그러한 지침이 필요하고 그러한 지침으로 인해 어떤 부분이 향상 될 수 있는지에 대해서는
+관심이 없이 그저 이렇게 하라니까 그렇게 하는 정도에 지나지 않을까?</p>
+<p>또한, 앞서 언급한대로 소비 주체 중 하나는 검색엔진이다.</p>
+<p>이 검색엔진에는 ‘black hat’이라는 것이 있다. 검색 엔진 결과 페이지의 순위를
+높이기 위해 올바르지 않은 방법을 사용한 사례가 이에 해당되는데 이에 관하여는 더 모르고 있는
+경우가 많다.</p>
+<h2 id="숨김-처리-방식과-그로-인한-문제">숨김 처리 방식과 그로 인한 문제</h2>
+<h3 id="display-이용">display 이용</h3>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>아마 접근성을 전혀 모르는 이들이 주로 선택하는 방법일 거다.</p>
+<p>그리고 요새 자주 보이는 상황으로는… 접근성에 전혀 관심을 둔 적이 없는 Front-End
+개발자들의 산출물에서도 이러한 경우를 쉽게 발견할 수 있다. 퍼블리셔가 그렇게 전달을 해 준적이
+없어서 발생되는 문제이기도 할 수 있지만, 관심사 자체가 기능에 있다보니 너무 쉽게 간과해버리는
+경우가 쉽게 발견되는 것도 같다. (정말… 너무 쉽게 간과한다.)</p>
+<p>무튼, <code>display: none</code>은 그 용어 그대로 정보를 표기하지 않겠다는 의미다. 따라서 가시적으로
+표기 되지 않게 되는데, 문제는 정보를 표기하지 않는 것이기 때문에 보조기기에도 정보를 전달하지
+않도록 처리된다.</p>
+<p>이렇게 숨겨놓은 건 숨겨 놓은게 아니라 그냥 없는 것과 같다.<br>
+애초에 없는 녀석이니 사용자에게 전달조차 되지 않는다.</p>
+<h3 id="visibility-이용">visibility 이용</h3>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>이 녀석의 경우는 사실 가시성을 <var>hidden</var>으로 주어 가시적으로는 숨김 처리를
+해두었지만 자리는 차지하고 있기 때문에 잘 사용되지는 않는 녀석이기는 하다.</p>
+<p>하지만</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>이러한 형태를 만들어 놓는 경우도 가끔 보이기도 한다.</p>
+<p>~~자리도 차지하지 못하게 만들었고 가시적으로도 숨겼다! 성공이다!~~는 착각이고 여전히
+접근성에서의 문제가 있다.</p>
+<p><code>visibility: hidden</code>은 그 의도 자체가 사용자에게 가시적으로 보여지지 않도록 하여
+사용자에게 정보를 전달하지 않겠다라는 것이기 때문에, 스크린리더 역시 해당 정보를 사용자에게
+전달해주지 않게 된다.</p>
+<p>따라서 결국 이 방법 역시 숨김 텍스트로는 적합하지 않다.</p>
+<h3 id="text-indent-이용">text-indent 이용</h3>
+<p>IR 기법으로 가장 많이 사용하고 있는 방식이 아마 이 text-indent라는 방식일 거다.</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">text-indent</span><span class="token punctuation">:</span> -9999px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>phark method라고도 알려져 있는 방식인데, CSS의 들여쓰기 기능을 이용해서 텍스트를 아주 저
+멀리로 보내버리는 방법이다.</p>
+<p>이번에는 노출이나 가시성을 변경하지 않았으므로 문제가 없을 것만 같이 보일지 모르겠다.<br>
+하지만 그렇게 생각했다면 잘못된 생각이다.</p>
+<img src="/screen-hide-text/text-indent-firefox.webp" class="block" width="767" height="837" alt="text-indent를 적용한 Firefox 스크린샷" loading="lazy">
+<p>이 이미지는 Firefox에서 <code>text-indent</code>를 <code>a</code> 요소에 적용 후 이 요소에 초점을 준 상태를
+캡쳐해 둔 것으로, 보이는 것과 같이 초점이 문서 바깥으로 나가버리는 현상을 볼 수 있다. (위
+페이지는 <code>body</code> 요소에 좌우로 160px의 padding이 적용되어 있다.)</p>
+<p>만일 숨김 텍스트를 적용한 것이 대화형 요소(interactive element)라면 초점의 문제가 발생되어
+버리게 된다.</p>
+<p>그렇다면 대화형 요소에는 적용하지 않고 요소에만 이렇게 적용하면 문제가 없지 않는가라는 질문을
+던질수도 있겠다. 하지만, 그 역시도 “여전히 문제는 있다.”이다.</p>
+<p>앞서 언급 한 것 중에 검색엔진에 대한 것을 보면, 검색엔진에는 black hat이라는 것이 있다고
+했다. 바로 이 방법이 black hat을 유발하는 원인이 된다. 검색 엔진이 text/html만을
+수집할거라고 오해하는 경우가 종종 있는데 Google 알고리즘의 경우 CSS도 검색하는 것으로
+알려져 있다.</p>
+<p>2010년의 자료로 거슬러 올라가보면, 구글의 수석 개발자 프로그램 엔지니어인 Maile Ohye가
+이에 관하여 포스팅 해 둔 게시글
+      <span class="footnote-ref">
+        <a
+          href="#fn2"
+          id="fnref2"
+          role="doc-noteref"
+          aria-label="Go to footnote 2"
+        >
+          [2]
+        </a>
+      </span>
+    이 있는데, 여기에 보면 구글은 해당 기법을 &quot;스팸&quot;으로
+분류한다고 되어 있으며 현재까지도 구글의
+<a rel="noreferrer nofollow" href="https://support.google.com/webmasters/answer/7451184?hl=ko">검색엔진 최적화(SEO) 초보자 가이드</a>에는
+숨김 텍스트를 사용하지 말 것
+      <span class="footnote-ref">
+        <a
+          href="#fn3"
+          id="fnref3"
+          role="doc-noteref"
+          aria-label="Go to footnote 3"
+        >
+          [3]
+        </a>
+      </span>
+    으로 이야기 하고 있다.</p>
+<p>퍼블리셔 대다수가 이 방법이 아주 유용하다라고 여겼을지 모르겠지만, 이 방법으로 인해 어쩌면
+검색엔진 최적화에 좋지 않은 영향을 미치고 있지 않았으리라는 보장은 할 수 없다.</p>
+<h3 id="zero-pixel-sizing">zero pixel sizing</h3>
+<p>아주 간간히 <var>width</var>/<var>height</var>를 0으로 만들거나, 다른 0 픽셀 사이징을
+이용하는 경우도 볼 수 있다.</p>
+<p><code>width: 0;</code>, <code>height: 0;</code>, <code>font-size: 0;</code></p>
+<p>등과 같은 방법이다.<br>
+하지만 이 역시도 문제가 있다.</p>
+<p>우선, <var>width</var>, <var>height</var>를 0으로 만드는 방법은 NVDA 및 VoiceOver로
+테스트 했을 경우에는 눈에는 보이지 않지만 읽히는 것으로 확인된다. 하지만, iOS에서
+VoiceOver로 초점을 이동시켜
+      <span class="footnote-ref">
+        <a
+          href="#fn4"
+          id="fnref4"
+          role="doc-noteref"
+          aria-label="Go to footnote 4"
+        >
+          [4]
+        </a>
+      </span>
+     보면 초점이 잡히게 되는 것을 볼 수 있다.<br>
+결국 빈 객체에 초점을 일으키기 때문에 사용자로서는 혼돈이 올 수 밖에 없는 문제가 발생된다.</p>
+<p>혹시나 VoiceOver로 읽는데 초점이 왜 문제냐 하는 이는 없기를 바란다.<br>
+스크린리더를 사용하는 건 반드시 전맹 시각 장애에만 해당한다는 뇌피셜을 버려야 한다.
+WebAIM의 스크린리더 사용자 설문조사 결과를 보면 전맹은 아니지만 스크린리더를 활용하는
+경우가 적지 않음을 알 수 있다
+      <span class="footnote-ref">
+        <a
+          href="#fn5"
+          id="fnref5"
+          role="doc-noteref"
+          aria-label="Go to footnote 5"
+        >
+          [5]
+        </a>
+      </span>
+    .</p>
+<p><var>font-size</var>를 0으로 만드는 경우에는 VoiceOver로 접근 시 콘텐츠를 읽지 않고
+스킵하는 것을 겪을 수 있게 된다.</p>
+<p>간혹 inline-level box의 요소 간 공백을 제거 하기 위한 방법으로 부모 요소 혹은 조상 요소에
+<code>font-size: 0;</code>를 적용하는 경우를 쉽게 볼 수 있는데 이러한 경우 역시 VoiceOver에서는
+접근이 불가한 상황을 만들어 내는 좋은(?) 방법이다. 
+      <span class="footnote-ref">
+        <a
+          href="#fn6"
+          id="fnref6"
+          role="doc-noteref"
+          aria-label="Go to footnote 6"
+        >
+          [6]
+        </a>
+      </span>
+    </p>
+<p>또한 이 방법은 Google의 웹마스터 가이드라인을 위반하는 것이기 때문에 결국 black hat까지도
+유발하는 원인이 될 수 있다.</p>
+<h3 id="opacity-이용">opacity 이용</h3>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>이 방법 역시 가시성을 숨기는 것과 비슷한 효과로 투명하게 만들어 사용자의 눈을 속이는(?)
+방법으로 간혹 사용되는 것을 볼 수 있다.</p>
+<p>하지만 이 역시 초점 이동, 대화형 요소인 경우 마우스 포인터가 반응하는 문제 등이 발생되고
+VoiceOver는 이를 읽어주지 않는 것으로 확인된다.</p>
+<p>역시 접근성에서는 문제가 많다.</p>
+<h3 id="positioning-screen-out">positioning screen out</h3>
+<p>아마 가장 많이 알고 있고 가장 많이 사용되고 있는 방법일 것으로 생각되는데,</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -9999px<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -9999px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>와 같은 방법이다.</p>
+<p>이 방법은 처음 text indenting 방식과 동일한 문제를 가지고 있다.</p>
+<h3 id="Hiding-with-Clip">Hiding with Clip</h3>
+<p>이쯤 되면 접근 가능한 숨김 방법이라는 것은 불가능에 가까워 보인다.</p>
+<p>하지만 아직 인터넷에 공개되어 있는 한 가지 방법이 더 있는데, H5BP
+      <span class="footnote-ref">
+        <a
+          href="#fn7"
+          id="fnref7"
+          role="doc-noteref"
+          aria-label="Go to footnote 7"
+        >
+          [7]
+        </a>
+      </span>
+    에서 채택한 방법으로</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span>1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>으로 처리하는 방식이다.</p>
+<p>이 방법을 사용하는 이는 아마도 접근성에 관심이 있다보니 찾고 찾고 찾아 여기까지 도달하지
+않았을까 생각한다. 왜냐하면, 이 방식을 쓰는 이들을 별로 본적이 없기 때문…</p>
+<p>이는 앞에서 본 문제들을 피하기 위해 zero를 사용하지 않되 가장 근접하게 수렴 한 1px을
+사용하고, screen out 기법으로 인한 black hat을 피하기 위해 고안된 방법으로 알고 있다.</p>
+<p>재미있게도(?) 아직 구글에서 <var>clip</var>을 이용한 클리핑 방법에 대해 black hat으로
+간주하고 있다는 report가 존재하지 않기 때문에 확증은 불가하나 문제가 되지 않는 최후의
+수단(?)으로 남아있는 듯 하다.</p>
+<p>하지만, 이 방법이 어느 제목에 속해있는지 잘 보자… 여기에도 여전히 문제는 남아있다.</p>
+<p>첫 째로는 <var>clip</var>이 deprecate된 속성이라는 점과, 둘째로는
+<code>position: absolute;</code>는 block formatting context(이하 BFC)로 변경시켜버리기 때문에
+발생되는 문제다.</p>
+<p>만일 한 문단 안에서 inline-level box로 전달되어야 하는 정보에 이 스타일을 적용하게 되면
+BFC로 변경되어 분리가 일어나게 된다. 
+      <span class="footnote-ref">
+        <a
+          href="#fn8"
+          id="fnref8"
+          role="doc-noteref"
+          aria-label="Go to footnote 8"
+        >
+          [8]
+        </a>
+      </span>
+    <br>
+따라서 한 번에 전달되어야 하는 문맥이 끊어지는 일이 발생되어 스크린리더로 읽게 되면 마치
+<var>div</var> 요소로 묶어놓은 것 마냥 끊어읽게 되는 일이 발생된다.</p>
+<h2 id="접근-가능한-숨김-방법">접근 가능한 숨김 방법</h2>
+<p>결국 문맥까지 고려해본다면 H5BP 방식에서 <code>position: absolute;</code>을 들어내야하고, clip의
+최신 표준을 사용해야 한다.</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span>1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">)</span><span class="token punctuation">;</span> // for legacy browsers
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>그런데 이렇게 할 경우, phrasing contents는 inline-level box로 렌더링 되기 때문에
+<var>width</var>, <var>height</var>를 가질 수 없고 더구나 이를 가진다 하더라도 1px
+만큼의 자리를 차지하게 되는 문제가 또 발생된다.</p>
+<p>우선, inline-level box에서의 문제는 <code>display: inline-block</code>을 통해서 해결 할 수 있을
+것이다.</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span>1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">)</span><span class="token punctuation">;</span> // for legacy browsers
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>1px 만큼의 자리를 차지하는 것을 해결 하는 방법은 position 값을
+<var>relative/absolute</var>로 주고 <var>top/left/z-index</var>를 조작 하는 방법과
+<var>margin</var> 값을 음수로 조작하는 방법이 있겠으나, 음수 margin은 VoiceOver에서
+읽기 순서에 변형이 일어나는 이슈가 보고 되었다고 하니 margin을 이용한 방법은 제외 되어야
+한다. 
+      <span class="footnote-ref">
+        <a
+          href="#fn9"
+          id="fnref9"
+          role="doc-noteref"
+          aria-label="Go to footnote 9"
+        >
+          [9]
+        </a>
+      </span>
+    </p>
+<p>그렇다면 남은 방법은 positioning을 통한 <var>top/left/z-index</var>를 조작하는
+방법인데, <var>top/left</var>는 결국 주변 엘리먼트에 영향을 주게 되는 문제가 다시 발생할
+소지가 남게 된다.<br>
+따라서 나는 아무도 선택하지 않은 z-index를 사용하기로 했다.</p>
+<p>즉, block-level box라면</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token comment">/* relative를 사용해도 무관할 듯 하다 */</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> -1<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span>1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>정도로 주어볼 수 있고, inline-level box라면</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.hidden</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> -1<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span>1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">,</span> 1px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">inset</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>정도로 해 볼 수 있겠다.</p>
+<p>두 가지를 나누어서 고려해야 하는 것이 불편하기는 하지만, 현재 상황에서 둘 모두를 만족하는
+방법이 과연 있을지는 좀 더 고민을 해 봐야 알 수 있을 듯 하다.</p>
+<hr>
+<p>많은 이들이 문제를 다각도로 보고 발생 가능한 이슈들을 판단하지 않고 그저 인터넷에
+공유되어있는 결과만을 가져다가 아무런 의심도 없이 쓰고 있는 경우를 많이 보게 되는 것 같다.</p>
+<p>거의 15년 가가이 동안 IR기법이 계속 변화되어 오면서 텍스트 숨김 처리 기법 역시 같은 영향을
+받았을텐데 아직도 15년전의 짧게는 10년 전의 방법들이 아무런 사이드 이펙트에 대한 의심도
+없이 그저 가져다 쓰기만 하는 것은 분명 문제가 있다고 생각된다.</p>
+<p>퍼블리셔가 해야 하는 마크업, 스타일 구축은 단순하게 눈에 보이는 것만 되게 만들면 되는게
+아니다. 명심하자. 내가 아무 생각없이 그냥 쓴 결과가 결국 누군가를 배제하는 결과를 만들 수도
+있고, 사이트의 품질을 떨어뜨릴 수도 있다. 반대로 내가 고민하는만큼 누군가가 배제되지 않고,
+사이트의 품질 역시 올라갈 수 있다.</p>
+
+
+      <section class="footnotes" role="doc-footnote">
+        <h2 class="sr-only">각주</h2>
+        <ol class="footnotes-list">
+    <li id="fn1" class="footnote-item"><p>Korean Web Content Accessibility Guidelines(한국형 웹 접근성 지침)
+      <a
+        href="#fnref1"
+        class="footnote-backref"
+        aria-label="Back to content for footnote 1"
+        role="doc-backlink"
+      >
+        <svg
+          class="crpdm-svg-icon"
+          focusable="false"
+          aria-hidden="true"
+        >
+          <use xlink:href="/images/solid.svg#arrow-turn-up"></use>
+        </svg>
+      </a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a rel="noreferrer nofollow" href="http://maileohye.com/html-text-indent-not-messing-up-your-rankings/">HTML “text-indent: -9999px” and holding the line</a>
+      <a
+        href="#fnref2"
+        class="footnote-backref"
+        aria-label="Back to content for footnote 2"
+        role="doc-backlink"
+      >
+        <svg
+          class="crpdm-svg-icon"
+          focusable="false"
+          aria-hidden="true"
+        >
+          <use xlink:href="/images/solid.svg#arrow-turn-up"></use>
+        </svg>
+      </a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a rel="noreferrer nofollow" href="https://support.google.com/webmasters/answer/66353">숨겨진 텍스트 및 링크</a>
+      <a
+        href="#fnref3"
+        class="footnote-backref"
+        aria-label="Back to content for footnote 3"
+        role="doc-backlink"
+      >
+        <svg
+          class="crpdm-svg-icon"
+          focusable="false"
+          aria-hidden="true"
+        >
+          <use xlink:href="/images/solid.svg#arrow-turn-up"></use>
+        </svg>
+      </a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>간혹 모바일 디바이스에서는 초점 이동이 불가한 것으로 오인하는 경우가 있는데, iOS의
+경우는 오른쪽/왼쪽 스와이프로 초점 이동이 가능하다.
+      <a
+        href="#fnref4"
+        class="footnote-backref"
+        aria-label="Back to content for footnote 4"
+        role="doc-backlink"
+      >
+        <svg
+          class="crpdm-svg-icon"
+          focusable="false"
+          aria-hidden="true"
+        >
+          <use xlink:href="/images/solid.svg#arrow-turn-up"></use>
+        </svg>
+      </a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a rel="noreferrer nofollow" href="https://webaim.org/projects/screenreadersurvey7/#usage">Screen Reader Usage Dec. 2017</a>
+      <a
+        href="#fnref5"
+        class="footnote-backref"
+        aria-label="Back to content for footnote 5"
+        role="doc-backlink"
+      >
+        <svg
+          class="crpdm-svg-icon"
+          focusable="false"
+          aria-hidden="true"
+        >
+          <use xlink:href="/images/solid.svg#arrow-turn-up"></use>
+        </svg>
+      </a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a rel="noreferrer nofollow" href="https://terrillthompson.com/tests/hiddencontent.html">Screen Reader hidden content test result</a>
+      <a
+        href="#fnref6"
+        class="footnote-backref"
+        aria-label="Back to content for footnote 6"
+        role="doc-backlink"
+      >
+        <svg
+          class="crpdm-svg-icon"
+          focusable="false"
+          aria-hidden="true"
+        >
+          <use xlink:href="/images/solid.svg#arrow-turn-up"></use>
+        </svg>
+      </a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>HTML5 BoilerPlate
+      <a
+        href="#fnref7"
+        class="footnote-backref"
+        aria-label="Back to content for footnote 7"
+        role="doc-backlink"
+      >
+        <svg
+          class="crpdm-svg-icon"
+          focusable="false"
+          aria-hidden="true"
+        >
+          <use xlink:href="/images/solid.svg#arrow-turn-up"></use>
+        </svg>
+      </a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>이 게시글을 예로 들자면, 첫 문장에 있는 이모티콘 옆에 실제로는 &quot;긁적긁적&quot;이라는
+텍스트가 숨겨져 있는데 position: absolute가 적용되어 있을 경우라면 긁적긁적이 앞선 문단과
+분리되므로 스크린리더로 읽을 경우 탐색을 2번 해야만 해당 텍스트에 접근이 가능해진다.
+스크린리더를 열고 방향키를 내려가며 읽어보면 무슨 말인지 확실히 알 수 있다.
+      <a
+        href="#fnref8"
+        class="footnote-backref"
+        aria-label="Back to content for footnote 8"
+        role="doc-backlink"
+      >
+        <svg
+          class="crpdm-svg-icon"
+          focusable="false"
+          aria-hidden="true"
+        >
+          <use xlink:href="/images/solid.svg#arrow-turn-up"></use>
+        </svg>
+      </a></p>
+</li>
+<li id="fn9" class="footnote-item"><p><a rel="noreferrer nofollow" href="https://github.com/h5bp/main.css/issues/12">macOS - VoiceOver / Chrome announcing visually hidden text out of order</a>
+in H5BP github
+      <a
+        href="#fnref9"
+        class="footnote-backref"
+        aria-label="Back to content for footnote 9"
+        role="doc-backlink"
+      >
+        <svg
+          class="crpdm-svg-icon"
+          focusable="false"
+          aria-hidden="true"
+        >
+          <use xlink:href="/images/solid.svg#arrow-turn-up"></use>
+        </svg>
+      </a></p>
+</li>
+</ol>
+
+<p><small>Hero image from
+<a rel="noreferrer nofollow" href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/wpi3sDUrSEk">unsplash</a></small></p></section>
+</div><section class="crpdm-article__tags"><h2 class="crpdm-heading--lv-2 crpdm-article__tags__heading"><span class="sr-only">태그</span><svg class="crpdm-svg-icon" focusable="false" aria-hidden="false"><use xlink:href="https://mulder21c.io/images/solid.svg#tags"></use></svg></h2><div class="crpdm-tags-list crpdm-tags-list--flat crpdm-article__tags__list"><ul><li><a href="https://mulder21c.io/tags/%EC%9B%B9-%EC%A0%91%EA%B7%BC%EC%84%B1/">웹 접근성</a></li><li><a href="https://mulder21c.io/tags/accessibility/">accessibility</a></li><li><a href="https://mulder21c.io/tags/hidden/">hidden</a></li><li><a href="https://mulder21c.io/tags/%EC%8A%A4%ED%81%AC%EB%A6%B0%EB%A6%AC%EB%8D%94/">스크린리더</a></li><li><a href="https://mulder21c.io/tags/sr-only/">sr-only</a></li><li><a href="https://mulder21c.io/tags/visually-hidden/">visually hidden</a></li></ul></div></section></article><section class="crpdm-article__author"><h2 class="crpdm-heading--lv-2 sr-only">작성자</h2><div class="crpdm-author"><span class="crpdm-author__gravatar"><img src="https://mulder21c.io/images/favicon.png" alt="" role="none" width="180" height="180"/></span><p class="crpdm-author__name">멀더끙</p><div class="crpdm-author__social"><a class="crpdm-author__social__link" href="https://github.com/mulder21c" aria-label="github"><svg class="crpdm-svg-icon crpdm-author__social__icon crpdm-author__social__icon--github" focusable="false" role="presentation"><use xlink:href="https://mulder21c.io/images/brands.svg#github"></use></svg></a><a class="crpdm-author__social__link" href="https://facebook.com/mulder21c" aria-label="facebook"><svg class="crpdm-svg-icon crpdm-author__social__icon crpdm-author__social__icon--facebook" focusable="false" role="presentation"><use xlink:href="https://mulder21c.io/images/brands.svg#facebook"></use></svg></a><a class="crpdm-author__social__link" href="https://twitter.com/mulder21c" aria-label="twitter"><svg class="crpdm-svg-icon crpdm-author__social__icon crpdm-author__social__icon--twitter" focusable="false" role="presentation"><use xlink:href="https://mulder21c.io/images/brands.svg#twitter"></use></svg></a><a class="crpdm-author__social__link" href="/atom.xml" aria-label="rss"><svg class="crpdm-svg-icon crpdm-author__social__icon crpdm-author__social__icon--rss" focusable="false" role="presentation"><use xlink:href="https://mulder21c.io/images/solid.svg#rss"></use></svg></a></div><p class="crpdm-author__desc">접근성에 관심이 많은 Front-End Developer, 커피 애호가, 사진 찍기 좋아하는 여행 러버,
+아직도 블로그 뭘 쓸지 모르겠는 초보 블로거, 그냥 이것 저것 개인의 생각을 끄적끄적이는
+멀더끙의 블로그입니다.
+</p></div></section><section class="crpdm-article__comments"><h2 class="crpdm-heading--lv-2 sr-only">댓글</h2><div id="remark42"></div></section></div><section class="slide-panel crpdm-slide-panel crpdm-slide-panel--btn-top _side" id="slide-nav" aria-label="설정 및 내비게이션" role="region" hidden="hidden" data-ui-name="sidebar"><div class="_side__inner"><div class="crpdm-accordion" id="lfzikglrm34" data-ui-name="sidebar-accordion"><div class="crpdm-accordion__header"><button class="crpdm-accordion__tab" type="button" id="hrav9wfcpjo" aria-expanded="false" aria-controls="qz0kcml5004"><span aria-hidden>⚙️</span>settings<svg class="crpdm-svg-icon crpdm-accordion__tab__icon" focusable="false" role="presentation"><use xlink:href="https://mulder21c.io/images/solid.svg#chevron-down"></use></svg></button></div><div class="crpdm-accordion__panel" id="qz0kcml5004" role="region" aria-labelledby="hrav9wfcpjo" hidden="hidden"><div class="crpdm-field crpdm-field--column" role="group" aria-labelledby="cvk8z56ak2a"><div class="crpdm-field__label crpdm-field__label--30" id="cvk8z56ak2a">테마</div><div class="crpdm-field__body"><div class="crpdm-radio-boxes"><label class="crpdm-radio-boxy crpdm-radio-boxes__item"><input class="crpdm-radio-boxy__control" type="radio" id="gulcga0o3cs" name="theme" value="auto"/><span class="crpdm-radio-boxy__box">자동</span></label><label class="crpdm-radio-boxy crpdm-radio-boxes__item"><input class="crpdm-radio-boxy__control" type="radio" id="puvfvfknevk" name="theme" value="light"/><span class="crpdm-radio-boxy__box">밝게</span></label><label class="crpdm-radio-boxy crpdm-radio-boxes__item"><input class="crpdm-radio-boxy__control" type="radio" id="n10voik2nvo" name="theme" value="dark"/><span class="crpdm-radio-boxy__box">어둡게</span></label></div></div></div><div class="crpdm-field crpdm-field--column" role="group" aria-labelledby="jrhtovrthkk"><div class="crpdm-field__label crpdm-field__label--30" id="jrhtovrthkk">글자 크기</div><div class="crpdm-field__body"><div class="crpdm-radio-slider"><span class="crpdm-radio crpdm-radio-slider__item"><input class="crpdm-radio__control" type="radio" id="cx7v0802di8" name="font-size" value="small"/><label class="crpdm-radio__label crpdm-radio__label--column" for="cx7v0802di8">작게</label></span><span class="crpdm-radio-slider__bar" aria-hidden="true"></span><span class="crpdm-radio crpdm-radio-slider__item"><input class="crpdm-radio__control" type="radio" id="m32v6vpm7gg" name="font-size" value="medium"/><label class="crpdm-radio__label crpdm-radio__label--column" for="m32v6vpm7gg">보통</label></span><span class="crpdm-radio-slider__bar" aria-hidden="true"></span><span class="crpdm-radio crpdm-radio-slider__item"><input class="crpdm-radio__control" type="radio" id="xzw87wpqvvo" name="font-size" value="large"/><label class="crpdm-radio__label crpdm-radio__label--column" for="xzw87wpqvvo">크게</label></span></div></div></div></div><div class="crpdm-accordion__header"><button class="crpdm-accordion__tab" type="button" id="dxar2g8e9lo" aria-expanded="false" aria-controls="qlt13bq5604"><span aria-hidden>📑</span>menu<svg class="crpdm-svg-icon crpdm-accordion__tab__icon" focusable="false" role="presentation"><use xlink:href="https://mulder21c.io/images/solid.svg#chevron-down"></use></svg></button></div><div class="crpdm-accordion__panel" id="qlt13bq5604" role="region" aria-labelledby="dxar2g8e9lo" hidden="hidden"><nav class="crpdm-menu-nav" aria-label="menu"><ul class="crpdm-menu-nav__list">
+        <li class="crpdm-menu-nav__list__item">
+          <a
+            href="https://mulder21c.io/archives"
+            class="crpdm-menu-nav__list__link "
+            
+          >
+            Archives
+          </a>
+        </li>
+      
+        <li class="crpdm-menu-nav__list__item">
+          <a
+            href="https://mulder21c.io/copyright"
+            class="crpdm-menu-nav__list__link "
+            
+          >
+            Copyright
+          </a>
+        </li>
+      
+        <li class="crpdm-menu-nav__list__item">
+          <a
+            href="https://mulder21c.io/comments-policy"
+            class="crpdm-menu-nav__list__link "
+            
+          >
+            Policy For Comments
+          </a>
+        </li>
+      
+        <li class="crpdm-menu-nav__list__item">
+          <a
+            href="https://mulder21c.io/resume"
+            class="crpdm-menu-nav__list__link "
+            
+          >
+            About Me
+          </a>
+        </li>
+      </ul></nav></div><div class="crpdm-accordion__header"><button class="crpdm-accordion__tab" type="button" id="bzw2j95vfj3" aria-expanded="false" aria-controls="de48o48ullb"><span aria-hidden>📂</span>categories<svg class="crpdm-svg-icon crpdm-accordion__tab__icon" focusable="false" role="presentation"><use xlink:href="https://mulder21c.io/images/solid.svg#chevron-down"></use></svg></button></div><div class="crpdm-accordion__panel" id="de48o48ullb" role="region" aria-labelledby="bzw2j95vfj3" hidden="hidden"><nav class="crpdm-category-nav" aria-label="categories"><ul class="crpdm-category-nav__list">
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/개발노트/"
+            class="crpdm-category-nav__list__link crpdm-category-nav__list__link--current"
+            aria-current="page"
+          >
+            개발노트
+          </a>
+          
+          <ul class="crpdm-category-nav__list crpdm-category-nav__list--child">
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/개발노트/a11y/"
+            class="crpdm-category-nav__list__link crpdm-category-nav__list__link--current"
+            aria-current="page"
+          >
+            A11Y
+          </a>
+          
+          
+        </li>
+      
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/개발노트/front-end/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            Front-End
+          </a>
+          
+          
+        </li>
+      
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/개발노트/html-css/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            HTML/CSS
+          </a>
+          
+          
+        </li>
+      
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/개발노트/javascript/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            JavaScript
+          </a>
+          
+          
+        </li>
+      
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/개발노트/etc/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            etc..
+          </a>
+          
+          
+        </li>
+      </ul>
+        </li>
+      
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/생각노트/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            생각노트
+          </a>
+          
+          <ul class="crpdm-category-nav__list crpdm-category-nav__list--child">
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/생각노트/in-christ/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            in christ
+          </a>
+          
+          
+        </li>
+      
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/생각노트/in-dailylife/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            in dailylife
+          </a>
+          
+          
+        </li>
+      
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/생각노트/in-occupation/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            in occupation
+          </a>
+          
+          
+        </li>
+      </ul>
+        </li>
+      
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/일상노트/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            일상노트
+          </a>
+          
+          <ul class="crpdm-category-nav__list crpdm-category-nav__list--child">
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/일상노트/miscellaneous/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            miscellaneous
+          </a>
+          
+          
+        </li>
+      
+          <li class="crpdm-category-nav__list__item">
+          <a
+            href="https://mulder21c.io/categories/일상노트/여행-사진/"
+            class="crpdm-category-nav__list__link "
+            
+          >
+            여행 & 사진
+          </a>
+          
+          
+        </li>
+      </ul>
+        </li>
+      </ul></nav></div><div class="crpdm-accordion__header"><button class="crpdm-accordion__tab" type="button" id="sasyw6bo94s" aria-expanded="false" aria-controls="asp49rbqtsc"><span aria-hidden>🔗</span>links<svg class="crpdm-svg-icon crpdm-accordion__tab__icon" focusable="false" role="presentation"><use xlink:href="https://mulder21c.io/images/solid.svg#chevron-down"></use></svg></button></div><div class="crpdm-accordion__panel" id="asp49rbqtsc" role="region" aria-labelledby="sasyw6bo94s" hidden="hidden"><nav class="crpdm-links-nav" aria-label="links"><ul class="crpdm-links-nav__list">
+        <li class="crpdm-links-nav__list__item">
+          <a
+            href="https://mulder21c.github.io/aria-practices/"
+            class="crpdm-links-nav__list__link"
+            target="_blank"
+            rel="noopener"
+          >
+            ARIA Authoring Practices 1.2 번역
+          </a>
+        </li>
+      
+        <li class="crpdm-links-nav__list__item">
+          <a
+            href="https://mulder21c.github.io/seminar"
+            class="crpdm-links-nav__list__link"
+            target="_blank"
+            rel="noopener"
+          >
+            세미나 발표 자료
+          </a>
+        </li>
+      </ul></nav></div></div><a class="crpdm-side-panel__search" href="https://mulder21c.io/search"><span aria-hidden>🔎</span>search<svg class="crpdm-svg-icon crpdm-side-panel__search__icon" focusable="false"><use xlink:href="https://mulder21c.io/images/solid.svg#arrow-up-right-from-square"></use></svg></a></div><button class="crpdm-btn-icon crpdm-btn-icon--medium crpdm-btn-icon--ghost crpdm-btn-icon--icon-only closer crpdm-slide-panel__btn-close crpdm-slide-panel__btn-close--top crpdm-slide-panel__btn-close--right" type="button" aria-label="close 설정 및 내비게이션"><svg class="crpdm-svg-icon crpdm-btn-icon__icon" focusable="false" aria-hidden="true"><use xlink:href="https://mulder21c.io/images/solid.svg#xmark"></use></svg></button></section><footer class="_footer"><div class="crpdm-footer"><p class="crpdm-license">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    aria-label="creative commons license"
+    role="img"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 24 24"
+    class="crpdm-license__icon"
+  >
+    <path
+      fill="currentColor"
+      d="m11.89 10.34l-1.34.7c-.14-.3-.31-.51-.52-.63c-.21-.12-.41-.18-.58-.18c-.9 0-1.34.59-1.34 1.77c0 .54.11.97.34 1.29c.22.32.55.48 1 .48c.58 0 .99-.27 1.23-.86l1.23.63c-.26.49-.62.87-1.09 1.15c-.46.28-.97.42-1.53.42c-.9 0-1.62-.27-2.17-.82C6.58 13.74 6.3 13 6.3 12c0-.95.28-1.7.83-2.26c.56-.56 1.26-.84 2.1-.84c1.24-.01 2.13.48 2.66 1.44m5.77 0l-1.32.7c-.14-.3-.34-.51-.53-.63c-.21-.12-.41-.18-.6-.18c-.89 0-1.34.59-1.34 1.77c0 .54.13.97.34 1.29c.23.32.56.48 1 .48c.59 0 1-.27 1.24-.86l1.25.63c-.28.49-.65.87-1.11 1.15c-.47.28-.97.42-1.52.42c-.9 0-1.63-.27-2.17-.82c-.54-.55-.81-1.29-.81-2.29c0-.95.28-1.7.83-2.26c.55-.56 1.25-.84 2.08-.84c1.26-.01 2.14.48 2.66 1.44M12 3.5a8.5 8.5 0 0 1 8.5 8.5a8.5 8.5 0 0 1-8.5 8.5A8.5 8.5 0 0 1 3.5 12A8.5 8.5 0 0 1 12 3.5M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"
+    >
+    </path>
+  </svg>
+<span class="crpdm-license__name">멀더끙</span><span class="crpdm-license__link">(<a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="external noreferrer noopener nofollow" target="_blank">BY-NC-ND</a>)</span></p><p class="crpdm-watermark">Powered by <a href="https://hexo.io/" rel="external noreferrer" target="_blank">Hexo.</a> Theme by <a href="https://github.com/mulder21c" rel="external noreferrer" target="_blank">mulder21c.</a></p></div></footer><!-- hexo injector body_end start -->
+      <script>
+      var remark_config = {"host":"https://comment.mulder21c.io","site_id":"mulder21c.io","no_footer":true,"locale":"ko"};
+      remark_config.theme = window.getThemeColor();
+      !function(e,n){
+      for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",
+      d=n.head||n.body;"noModule" in r?(r.type="module",c=".mjs"):r.async=!0,
+      r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}
+      }(remark_config.components || ["embed"], document);
+      function changeRemarkTheme(e){const{changeTheme:n}=window.REMARK42||{};
+      if(!n)return;setTimeout(() => n(window.getThemeColor()), 0)}
+      window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change",changeRemarkTheme);
+      window.addEventListener("themeChange",changeRemarkTheme);
+      </script>
+    <script src="/js/pannellum.js"></script><script>
+    window.components = new Set(["slide-panel","accordion","radio","article-card"]);
+    window.uis = window.uis || new Map();
+  </script><script src="/js/bundle.js"></script><script src="/js/vendor.js"></script><!-- hexo injector body_end end --></body></html>
