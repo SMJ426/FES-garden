@@ -161,6 +161,30 @@ input::placeholder {
   clip-path: inset(50%);
 }
 
+.label-hold::before {
+  display: inline-block;
+  content: '';
+  background-image: url(../images/check-box.png);
+}
+
+/* 로그인 버튼 디자인 */
+.btn-login {
+  display: block;
+  margin: 21px auto;
+  width: 472px;
+  height: 50px;
+  border-radius: 5px;
+  background: #2F80ED;
+  border: #2F80ED;
+  color: #FFF;
+  font-family: 'Spoqa Han Sans Neo';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+
 
 
 /* 다른 계정으로 로그인 하기 디자인 */
