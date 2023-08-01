@@ -92,25 +92,24 @@ h2 {
 
 /*아이디 비밀번호 입력란 디자인*/
 .wrapper {
+}
+.wrapper-idpw {
   display: flex;
   flex-direction: column;
-  /* justify-content: start; */
-  /* justify-self: center; */
-  /* align-items: center; */
-  align-items: first;
-  margin-left: 21px;
+  align-items: center;
 }
 
 h3 {
-  display: inline;
+  /* background-color: red; */
   color: #000;
-  font-family: Spoqa Han Sans Neo;
+  font-family: 'Spoqa Han Sans Neo';
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px; /* 120% */
   width: 369px;
   height: 24px;
+  margin-left: 16px;
   margin-top: 26px;
   margin-bottom: 24px;
 }
@@ -118,11 +117,11 @@ h3 {
 input {
   width: 472px;
   height: 50px;
-  flex-shrink: 0;
   border-radius: 5px;
   border: 1px solid #C4C4C4;
   background: #FFF;
   padding-left: 16px;
+  box-sizing: border-box;
 }
 input::placeholder {
   color: #767676;
@@ -140,9 +139,14 @@ input::placeholder {
 }
 .PS {
   margin-top:0;
+  margin-bottom: 10px;
 }
+
 /* 아이디, 비밀번호을 올바르게 입력 안 했을시 경고문 */
-.error {
+.error.ID {
+  align-self: flex-start;
+  margin-left: 24px;
+  /* background-color: blue; */
   color: #F4492E;
   font-family: 'Spoqa Han Sans Neo';
   font-size: 14px;
@@ -152,19 +156,38 @@ input::placeholder {
   margin-bottom: 10px;
   }
 
-/* 로그인 상태 유지 */
 
+/* 로그인 상태 유지 */
 .txt-hide {
   overflow: hidden;
   width: 1px;
   height: 1px;
   clip-path: inset(50%);
 }
-
-.label-hold::before {
+.labl-hold {
+  position: relative;
+  vertical-align: -5px;
+  margin-left: 10px;
+  color: #767676;
+  font-family: 'Spoqa Han Sans Neo';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  
+}
+.labl-hold::before {
   display: inline-block;
   content: '';
-  background-image: url(../images/check-box.png);
+  width: 22px;
+  height: 22px;
+  vertical-align: -5px;
+  background: url(../images/check-box.svg) no-repeat;
+  
+  padding-right: 8px;
+}
+.labl-hold:hover{
+  cursor: pointer;
 }
 
 /* 로그인 버튼 디자인 */
@@ -184,7 +207,28 @@ input::placeholder {
   line-height: 22px;
 }
 
-
+/* 회원가입 | 아이디/비밀번호 찾기 버튼 */
+.side-tool {
+  /* background-color: red; */
+  width: fit-content;
+  margin: 0 auto;
+}
+.side-tool button,p{
+  display: inline;
+  color:#767676;
+  font-family: 'Spoqa Han Sans Neo';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.side-tool button {
+  border: none;
+  background-color: #FFF;
+}
+.side-tool p {
+  margin: 0 12px;
+}
 
 
 /* 다른 계정으로 로그인 하기 디자인 */
