@@ -45,7 +45,7 @@ html, body, div, span, applet, object, iframe,
 main {
   position: relative;
   width: 520px;
-  height: 712px;
+  height: 736px;
   flex-shrink: 0;
   border-radius: 10px;
   border: 1px solid  black;/*색만 수정 해야하는 사항*/
@@ -134,7 +134,7 @@ input::placeholder {
 .inp.ID {
   margin-bottom: 6px;
   border-radius: 5px;
-  border: 1px solid #F4492E;
+  border: 2px solid #F4492E;
   background: #FFF;
 }
 .PS {
@@ -230,17 +230,48 @@ input::placeholder {
   margin: 0 12px;
 }
 
+/* '또는' 디자인 */
+.line {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  color: #767676;
+  font-family: 'Spoqa Han Sans Neo';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  }
+  .line::before {
+    display: inline-block;
+    content: '';
+    width: 210px;
+    height: 1px;
+    background-color: #C4C4C4;
+    margin-right: 13px;
+  }
+  .line::after {
+    display: inline-block;
+    content: '';
+    width: 210px;
+    height: 1px;
+    background-color: #C4C4C4;
+    margin-left: 13px;
+  }
+
 
 /* 다른 계정으로 로그인 하기 디자인 */
 .difLogin {
-  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
 a {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 472px;
   height: 50px;
   flex-shrink: 0;
@@ -249,8 +280,6 @@ a {
   background: #FFF;
   text-decoration: none;
   color: #767676;
-
-  text-align: center;
   font-family: 'Spoqa Han Sans Neo', sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -260,16 +289,28 @@ a {
 
 .google {
   background: url(../images/Google__G__Logo\ 1.png) no-repeat;
+  background-position: 3% 50%;
+  border-radius: 5px;
+  border: 1px solid #767676;
 }
 
 .facebook {
   background: url(../images/facebook.png) no-repeat;
+  background-position: 3% 50%;
+  border-radius: 5px;
+  border: 1px solid #2D9CDB;
 }
 
 .naver {
   background: url(../images/naver-logo.png) no-repeat;
+  background-position: 3% 50%;
+  border-radius: 5px;
+  border: 1px solid #00BF18;
 }
 
 .kakao {
   background: url(../images/message-circle.png) no-repeat;
+  background-position: 3% 50%;
+  border-radius: 5px;
+  border: 1px solid #F2C94C;
 }
