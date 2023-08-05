@@ -10,58 +10,105 @@
 <body>
     <h1><img src="./image/logo.png"></h1>
     
-    <section class="section1">
-      <h2 class="a11y-hidden">판매 음료</h2>
-      <ul>
-        <li>
-          <button type="button" class="btn-cola on">
-            <img src="./image/Original.png" alt="오리지널">
-            <span>Original_Cola</span>
-            <strong>1000원</strong>
-          </button>
-        </li>
+    <header class="header_wrapper">
+      <section class="section one">
+        <h2 class="a11y-hidden">판매 음료</h2>
 
-        <li>
-          <button type="button" class="btn-cola on">
-            <img src="./image/Violet.png" alt="오리지널">
-            <span>Violet_Cola</span>
-            <strong>1000원</strong>
-          </button>
-        </li>
+        <ul class="menu">
+          <li>
+            <button type="button" class="btn-cola on">
+              <img src="./image/Original.png" alt="original">
+              <span>Original_Cola</span>
+              <strong>1000원</strong>
+            </button>
+          </li>
+  
+          <li>
+            <button type="button" class="btn-cola off">
+              <img src="./image/Violet.png" alt="violet">
+              <span>Violet_Cola</span>
+              <strong>1000원</strong>
+            </button>
+          </li>
+  
+          <li>
+            <button type="button" class="btn-cola off">
+              <img src="./image/Yellow.png" alt="yellow">
+              <span>Yellow_Cola</span>
+              <strong>1000원</strong>
+            </button>
+          </li>
+  
+          <li>
+            <button type="button" class="btn-cola off">
+              <img src="./image/Cool.png" alt="cool">
+              <span>Cool_Cola</span>
+              <strong>1000원</strong>
+            </button>
+          </li>
+  
+          <li>
+            <button type="button" class="btn-cola on">
+              <img src="./image/Green.png" alt="green">
+              <span>Green_Cola</span>
+              <strong>1000원</strong>
+            </button>
+          </li>
+  
+          <li>
+            <button type="button" class="btn-cola off">
+              <img src="./image/Orange.png" alt="orange">
+              <span>Orange_Cola</span>
+              <strong>1000원</strong>
+            </button>
+          </li>
+        </ul>
 
-        <li>
-          <button type="button" class="btn-cola on">
-            <img src="./image/Original.png" alt="오리지널">
-            <span>Original_Cola</span>
-            <strong>1000원</strong>
-          </button>
-        </li>
+        <h2 class="a11y-hidden">금액 입력란</h2>
+        <div class="pay_input">
+          <span>
+            <p class="text">잔액 :</p>
+            <p class="text">1,000 원</p>
+          </span>
+          <button class="replace">거스름돈 반환</button>
 
-        <li>
-          <button type="button" class="btn-cola on">
-            <img src="./image/Original.png" alt="오리지널">
-            <span>Original_Cola</span>
-            <strong>1000원</strong>
-          </button>
-        </li>
+          <input type="number" class="input-money" id="input-money" min="1000" step="1000" placeholder="입금액 입력" required>
+          <label class="a11y-hidden" for="input-m oney"></label>
 
-        <li>
-          <button type="button" class="btn-cola on">
-            <img src="./image/Original.png" alt="오리지널">
-            <span>Original_Cola</span>
-            <strong>1000원</strong>
-          </button>
-        </li>
+          <button class="btn_input">입금</button>
+        </div>
 
-        <li>
-          <button type="button" class="btn-cola on">
-            <img src="./image/Original.png" alt="오리지널">
-            <span>Original_Cola</span>
-            <strong>1000원</strong>
+
+        <h2 class="a11y-hidden">장바구니</h2>
+        <div class="third-wrapper">
+          <div class="chart item">
+            <div class="item original">
+              <img src="./image/Original.png" alt="Original_Cola">
+              <p class="item_font">Original_Cola</p>
+              <span class="item_span">1</span>
+            </div>
+            <div class="item green">
+              <img src="./image/Green.png" alt="Green_Cola">
+              <p class="item_font">Green_Cola</p>
+              <span class="item_span">2</span>
+            </div>
+          </div>
+
+          <button class="get">
+            <p>획득</p>
           </button>
-        </li>
-      </ul>
-      <h2>장바구니</h2>
-    </section>
+        </div>
+      </section>
+  
+      <div class="wrapper">
+        <section class="section two">
+          section2
+        </section>
+
+        <section class="section three">
+          section2
+        </section>
+      </div>
+    </header>
 </body>
 </html>

@@ -1,7 +1,11 @@
 body {
-  background-color: skyblue;
+  background-color: #EAE8FE;;
 }
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
+.notosanskr * { 
+  font-family: 'Noto Sans KR', sans-serif;
+}
 /*------------- reset ---------------*/
 body,
 h1,
@@ -13,7 +17,6 @@ button {
   padding: 0;
   margin: 0;
 }
-
 h1,
 h2,
 h3,
@@ -22,18 +25,15 @@ h5,
 h6 {
   font: inherit;
 }
-
 ul,
 li {
   list-style: none;
 }
-
 button {
   font: inherit;
   border: 0;
   background: none;
 }
-
 .a11y-hidden {
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -48,4 +48,238 @@ button {
 /*----------CSS스타일 적용---------*/
 h1 {
   text-align: center;
+}
+
+/* 전체적인 section 구조 flex로 짜기 */
+.header_wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+.wrapper {
+  width: 360px;
+  height: 545px;  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.one {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+  background-color: #fff
+}
+.two {
+  background-color: #fff;
+  flex-grow: 1;
+}
+.three{
+  background-color: #fff;
+  flex-grow: 15;
+}
+
+
+/* section1 메뉴란 디자인 */
+.menu {
+  display: grid;
+  gap: 12px;
+  width: 306px;
+  height: 272px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+button img {
+  width: 36px;
+  height: 65px;
+}
+.btn-cola {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 94px;
+  height: 130px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.50);  
+}
+.btn-cola span {
+  color: #333;
+  text-align: center;
+  font-family: 'Noto Sans KR';
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.btn-cola strong {
+  width: 70px;
+  height: 22px;
+  flex-shrink: 0;border-radius: 50px;
+  background: #6327FE;
+
+  color: #FFF;
+  text-align: center;
+  font-family: 'Noto Sans KR';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 180%;
+}
+
+/* section one안에 있는 금액 입력란 grid로 디자인 */
+.pay_input {
+  /* background-color: salmon; */
+  display: grid;
+  gap: 13px;
+  height: 77px;
+  width: 312px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 20px;
+}
+.pay_input span{
+  /* width: 200px;
+  height: 33px; */
+  border-radius: 5px;
+  background-color: #EAE8FE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 6px;
+}
+.text{
+  color: #000;
+  text-align: right;
+  font-family: 'Noto Sans KR';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.replace {
+  color: #000;
+  text-align: center;
+  font-family: 'Noto Sans KR';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  background: #FFF;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.input-money {
+  border: 1px solid #bdbdbd;
+  height: 32px;
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.input-money::placeholder{
+  color: var(--gray-4, #BDBDBD);
+  font-family: 'Noto Sans KR';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+.btn_input {
+  color: #000;
+  text-align: center;
+  font-family: 'Noto Sans KR';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  background: #FFF;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+/* 장바구니 부분 디자인 */
+.third-wrapper {
+  display: flex;
+  gap: 13px;
+  margin-top: 12px;
+}
+
+.chart.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 195px;
+  height: 106px;
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
+  background: #EAE8FE;
+  overflow: auto;
+}
+.item.original {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 170px;
+  height: 46px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 6px;
+}
+.item.green {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 170px;
+  height: 46px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 6px;
+}
+.item_font {
+  color: var(--gray-1, #333);
+  font-family: 'Noto Sans KR';
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.item_span {
+  text-align: center;
+  line-height: 180%;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid var(--gray-4, #BDBDBD);
+}
+div img {
+  width: 18px;
+  height: 33px;
+}
+
+/* 획득 버튼 디자인 */
+.get {
+  width: 100px;
+  height: 106px;
+  background: #6327FE;
+  border-radius: 5px;
+}
+.get p {
+  color: #FFF;
+  font-family: 'Noto Sans KR';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+button:hover{
+  cursor: pointer;
 }
