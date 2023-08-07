@@ -146,11 +146,36 @@ output
 
 /////////////////////////////
 
-
-
-
-
 // 주의사항
 // forEach는 return을 사용할 수 없습니다.
+[1, 2, 3].forEach(v => {
+    console.log(v)
+    return // 리턴했는데 멈추지 않는다!
+})
+
+[1, 2, 3].forEach(v => {
+    return // 뒤에 코드를 무시하는 코드로는 사용할 수는 있다!
+    console.log(v)
+})
+
 // forEach는 break, continue를 사용할 수 없습니다.
-// ElemetnNodeList는 forEach를 사용할 수 없습니다.
+[1, 2, 3].forEach(v => {
+    console.log(v)
+    break // break은 error입니다.(반복문에서 배웁니다.)
+})
+
+[1, 2, 3].forEach(v => {
+    console.log(v)
+    continue // continue는 error입니다.(반복문에서 배웁니다.)
+})
+
+
+// ElemetnNodeList는 forEach는 익스플로러를 지원하지 않습니다.
+// 기억해야 할 문구 : forEach라고 다 같은 forEach가 아니다!
+// html파일
+// <div>1</div>
+// <div>2</div>
+// <div>3</div>
+document.querySelectorAll('div').forEach(v => {
+    console.log(v)
+})
