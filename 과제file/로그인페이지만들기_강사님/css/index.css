@@ -39,6 +39,9 @@ html, body, div, span, applet, object, iframe,
   padding: 0;
   position: absolute;
 }
+button:hover{
+  cursor: pointer;
+}
 
 /* 스타일 적용 */
 
