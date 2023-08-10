@@ -9,7 +9,7 @@
 <body>
     <script>
     // 사용자가 입력한 메뉴 번호에 따라 해당하는 메뉴 이름과 가격을 출력합니다. 만약 종료 번호를 누르면 ‘종료합니다’ 를 콘솔에 출력합니다.
-    const menu = [
+    const menu1 = [
             { name: "아메리카노", price: 2000 },
             { name: "카페라떼", price: 2500 },
             { name: "카페모카", price: 2800 },
@@ -20,7 +20,7 @@
       let user_number = prompt("번호를 입력하시오 종료번호는 9입니다.");
         for (let i = 0; i < 5; i++){
           if(i==user_number){
-            console.log(`메뉴: ${menu[i].name}, 가격:${menu[i].price}`);
+            console.log(`메뉴: ${menu1[i].name}, 가격:${menu1[i].price}`);
             break;
           }
           else if (user_number == 9){
