@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+      var arr = [];
+      
+      while (arr.length < 6) {
+        let num = parseInt(Math.random() * 45 + 1);
+        if(arr.indexOf(num) == -1) {
+          arr.push(num)
+        }
+      }
+      arr.sort((a,b) => a-b);
+      console.log(arr);
+      
+
+
+      // 강사님 풀이
+      
+      function lottoGenerator() {
+        const lottArr = [];
+
+        while (lottArr.length < 6) {
+          const result = parseInt(Math.random * 45 + 1);
+
+          if (!lottArr.includes(result)) {
+            lottArr.push(result);
+          }
+        }
+        return lottArr;
+      }
+      console.log(lottoGenerator());
+      
+    </script>
+</body>
+</html>
