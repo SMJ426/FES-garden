@@ -13,20 +13,4 @@
 //  *******
 // *********
 
-let levelNum = parseInt(prompt('정수를 입력해주세요.'));
-
-for (let i=1; i<= levelNum ; i++){
-  let tree = "";
-
-  // 공백 증가 for문
-  for(let k=1; k<=levelNum-i  ; k++){
-    tree += ' ';
-  }
-
-  // 별 증가 for문
-  for(let j=1 ; j <= 2*i-1 ; j++){
-    tree += '*';
-  }
-}
-
-console.log(tree);
+let num = parseInt(prompt('별의 개수를 입력하세요'));
