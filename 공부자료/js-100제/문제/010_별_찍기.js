@@ -13,4 +13,37 @@
 //  *******
 // *********
 
-let num = parseInt(prompt('별의 개수를 입력하세요'));
+// 내 풀이
+const num = parseInt(prompt('별의 개수를 입력하세요'));
+
+let tree='';
+
+for(let i=1; i<=num ; i++){
+  for(let k=1 ; k<=num-i ; k++){
+    tree += ' ';
+  }
+  for(let j=1; j<=2*i-1 ; j++){
+    tree += '*';
+  }
+  tree +='\n';
+}
+console.log(tree);
+
+
+// 답안 
+const n = prompt('숫자를 입력하세요.');
+let tree2 = '';
+
+for(let i=1; i<=n; i++){
+  let star = '';
+  for(let j=1; j<=n-i; j++){
+    star += ' ';
+  }
+  for(let k=1; k<=2*i-1; k++){
+    star += '*';
+  }
+  tree += star + '\n';
+}
+
+console.log(tree2);
+
