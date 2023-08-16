@@ -11,7 +11,7 @@
 const score = prompt('세 과목의 점수를 입력하시오').split(' ');
 let sum =0;
 for (let i=0; i<3; i++){
-  sum += parseInt(score[i]);
+  sum += parseInt(score[i], 10);
 }
 console.log(Math.floor(sum/score.length));
 // Math.floor : 주어진 값보다 이하의 가장 큰 정수를 반환합니다. (내장함수)
