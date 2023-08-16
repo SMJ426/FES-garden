@@ -5,7 +5,7 @@
 
 const height = parseInt(prompt('키를 입력해주세요'));
 
-if(height > 150){
+if(height >= 150){
   console.log('YES');
 }
 else {
