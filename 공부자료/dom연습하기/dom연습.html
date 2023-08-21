@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom연습해보자</title>
+    <style>
+      .black,
+      .good{
+        display: none;
+      }
+
+      .on {
+        display: block;
+      }
+    </style>
+</head>
+<body>
+  <button class="btn good on"><img src="./image/good.jpg" alt="좋아요이미지"></button>
+  <button class="btn black"><img src="./image/good-black.png" alt="다른 좋아요이미지"></button>
+    <script>
+      const btn_good = document.querySelector('.good');
+      const btn_black = document.querySelector('.black');
+
+      const btns = document.querySelectorAll('.btn');
+      btns.forEach((itemBtn) => {
+        itemBtn.addEventListener('click', function(){
+          btn_good.classList.toggle('on');
+          btn_black.classList.toggle('on');
+        })
+      })
+    </script>
+</body>
+</html>
+
+
+<!-- 안녕하세요 강사님! 
+제가 따로 dom으로 여러 기능을 구현하면서 연습하고 싶어서 좋아요 버튼을 누르면 검은색으로 채워지고 다시 누르면 원래 디폴트값으로 돌아오는 기능을 만들고 있었습니다!
+
+위와같이 btn을 두번 선택해서 (btn_black과 btn_good) 코드를 짰는데 너무 코드도 길고 비효율적인것 같아서 아래와 같이 forEach로 짜봤습니다!
+짧지만 코드리뷰좀 부탁드립니다..ㅎㅎ
+
+근데 짜면서 든 궁금즘이 
+처음에는 const btns = document.querySelectorAll('.btn'); 이렇게 하지 않고 const btns = document.querySelector('.btn');으로 btns들을 선택해줬는데 이때는 btns에 forEach를 사용할 수 없었습니다.
+혹시 이때는 querySelectorAll을 하지 않으면 btns들이 유사배열로 저장되지 않아서 forEach를 사용할 수 없었던건가요?
+-->
+
