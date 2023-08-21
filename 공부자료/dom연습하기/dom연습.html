@@ -20,16 +20,13 @@
   <button class="btn good on"><img src="./image/good.jpg" alt="좋아요이미지"></button>
   <button class="btn black"><img src="./image/good-black.png" alt="다른 좋아요이미지"></button>
     <script>
-      const btn_good = document.querySelector('.good');
-      const btn_black = document.querySelector('.black');
-
       const btns = document.querySelectorAll('.btn');
-      btns.forEach((itemBtn) => {
-        itemBtn.addEventListener('click', function(){
-          btn_good.classList.toggle('on');
-          btn_black.classList.toggle('on');
+        btns.forEach((itemBtn) => {
+            itemBtn.addEventListener('click', function () {
+                btns[0].classList.toggle('on');
+                btns[1].classList.toggle('on');
+            })
         })
-      })
     </script>
 </body>
 </html>
