@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heart</title>
+    <style>
+    img{
+        vertical-align: middle;
+    }
+    button{
+        border: 0;
+        background: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .btn-heart:hover{
+        cursor: pointer;
+    }
+    
+    .btn-heart{
+        width: 30px;
+    }
+
+    .btn-heart.on{
+        background-image: url(./img/heart-solid.svg);
+        background-repeat: no-repeat;
+        background-size: 30px;
+    }   
+    </style>
+</head>
+<body>
+    <h3>좋아요 버튼 만들기</h3>
+    <button class="btn-heart" type="button">
+    <img src="./img/heart-regular.svg" alt="좋아요버튼"></button>
+
+    <script>
+        const btnHeart = document.querySelector('.btn-heart');
+        btnHeart.addEventListener('click', function(){
+            btnHeart.classList.toggle('on');
+        })
+    </script>
+</body>
+</html>
