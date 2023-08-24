@@ -9,3 +9,13 @@
 // 출력
 // {'Yujin': 70, 'Hyewon': 100}
 
+
+const keys = prompt('이름을 입력하시오.').split(' ');
+const score = prompt('점수를 입력하시오.').split(' ');
+const student = {};
+
+for(let i=0; i<5; i++){
+  student[keys[i]] = score[i];
+}
+
+console.log(student);
