@@ -50,6 +50,10 @@ path{
   background-color: white;
 }
 
+.btn-close {
+  cursor: pointer;
+}
+
 /* modal */
 .modal{
   width:300px;
