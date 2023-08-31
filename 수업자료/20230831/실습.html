@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+    <style>
+      /* 초기 박스 디자인 */
+      .box {
+        width: 50px;
+        height: 50px;
+        background-color: skyblue;
+        /* position: absolute;
+        left :50%;
+        top:50%;
+        transform: translateY(-50%); */
+      }
+
+      
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+      const box = document.querySelector('.box');
+      let currentPosX = 0;
+      let currentPosY = 0;
+      let move = 5;
+
+      document.addEventListener('keydown', keyDownFunc);
+      document.addEventListener('keyup', keyUpFunc);
+
+      function keyDownFunc(e) {
+        if(e.key == 37 || e.key == 'ArrowLeft'){
+          console.log('왼쪽으로 이동');
+          currentPosX -= move;
+          box.style.transform = `translate(${currentPosX}px, ${currentPosY}px)`;
+        }
+        else if(e.key == 39 || e.key == 'ArrowRight'){
+          console.log('오른쪽으로 이동');
+          currentPosX += move;
+          box.style.transform = `translate(${currentPosX}px, ${currentPosY}px)`;
+        }
+        else if(e.key == 38 || e.key == 'ArrowUp'){
+          currentPosY -= move;
+          box.style.transform = `translate(${currentPosX}px, ${currentPosY}px)`;
+          console.log('위쪽으로 이동');
+        }
+        else if(e.key == 40 || e.key == 'ArrowDown'){
+          currentPosY += move;
+          box.style.transform = `translate(${currentPosX}px, ${currentPosY}px)`;
+          console.log('아래쪽으로 이동');
+        }
+      }
+
+      function keyUpFunc(e) {
+        
+
+      }
+    </script>
+</body>
+</html>
