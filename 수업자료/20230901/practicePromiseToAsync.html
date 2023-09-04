@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        class UserStorage {
+        // 사용자가 입력한 값과 유저 정보가 일치하는 유저를 찾습니다.
+        async searchUser(userName, password){ // 함수내에 await이 있기 때문에 async를 붙였다.
+
+            // 통신의 결과로 전달받는 response 객체에 json() 메소드를 이용해서 JS 객체를 가지는 promise 객체를 추출한다.(전에 배운 내용 복습인듯)
+
+
+            // try - catch: try 문 안의 코드를 실행시키고, 만약 에러가 중간에 발생하면 catch 안에서 처리하는 형태를 가진다.
+
+            // try - catch문이 실행되는 순서
+            // 1. 먼저, try {...} 안의 코드가 실행됩니다.
+            // 2. 에러가 없다면, try 안의 마지막 줄까지 실행되고, catch 블록은 건너뜁니다.
+            // 3. 에러가 있다면, try 안 코드의 실행이 중단되고, catch(err) 블록으로 제어 흐름이 넘어갑니다. 변수 err(아무 이름이나 사용 가능)는 무슨 일이 일어났는지에 대한 설명이 담긴 에러 객체를 포함합니다.
+
+
+
+                try {
+                    const response = await fetch('user.json'); // await 키워드를 작성하지 않으면 fetch를 통해 데이터를 가져오는 과정을 js가 기다려주지 않기 때문에 (비동기) await 키워드를 사용해서 동기적으로 작동하도록 한것.
+
+                    if(!response.ok){ // 에러인경우를 response.ok를 통해서 예외처리해주는 작업(필수)
+                    throw new Error(`HTTP ERROR!!: ${response.status}`); // throw를 통해서 사용자 정의 에러 문구를 출력한다.
+                    
+                    
+                    // .json()메소드는 promise 객체를 반환하기 때문에 비동기로 작동한다. => await 키워드가 반드시 필요(중요-자주등장)
+                    const data = await response.json();
+
+                    // 전달된 JS 객체를 이용해 우리가 원하는 데이터를 추출한다.
+                    const result = data.user.find((item => {
+                        return item.userName === userName && item.password === password;
+                    }));
+
+                    // result 값이 없다면 에러를 던진다.
+                    if(!result){
+                        throw new Error('user not found');
+                    }
+
+                    return userName;
+
+                } catch(error){ // try문 안에 에러가 있다면 실행되는 catch문
+                console.log('유저를 찾는 도중에 에러가 발생했습니다. :', error) // 여기서 error 인자는 위에 try문안에 있는 error 생성 즉, Error('user not found') 이걸 가리킨다.
+
+                // 따라서 error를 던져서 catch함수가 에러 객체를 받도록 하는것이다.
+                throw error;
+            }
+        }
+    }
+        
+
+        // 유저에 맞는 인사말을 출력한다.
+        async sayHi(user){ // searchUser()에서와 같은 이유로 async 키워드를 붙여줬다.
+
+            // 여기서도 마찬가지로 try - catch문을 사용한다.
+            try {
+                const response = await fetch('greetings.json'); // 비동기 통신이기 때문에 await 키워드를 붙여준다.
+
+                if(!response.ok){ // 통신의 오류가 있는 경우를 의미한다.
+                    throw new Error(`HTTP ERROR! : ${response.status}`); // 에러를 던지고 응답의 상태도 나타내준다.
+                }
+                const data = await response.json(); // json메소드는 비동기이기때문에 await 키워드 작성
+                // 이 작업은 fetch는 promise 객체를 반환하기 때문에 이 객체를 JS객체로 변환하기 위해서 json메소드를 사용하고 있는 것이다.
+
+                const result = data.greetings.find((item) => {
+                    return item.userName === user; // sayHi함수의 인자와 같은 값을 반환
+                });
+
+                if(!result){ // result가 없는 경우
+                    throw new Error('no greetings');
+                }
+
+                return result;
+
+            } catch (error){
+                console.log('인사말을 찾는 도중에 에러가 발생했습니다. :', error);
+                throw error;
+            }
+        }
+    }
+
+        const userStorage = new UserStorage(); // 생성자 함수로 인스턴스 생성
+
+        const userName = prompt('이름을 입력하세요.');
+        const password = prompt('비밀번호를 입력하세요.');
+
+        async function sayHello() {
+
+            try {
+                // searchUser. sayHi 모두 async 함수입니다. 따라서 await을 통해 작동 순서를 동기적으로 보장하도록 합니다.
+
+                const result = await userStorage.searchUser(userName, password);
+
+                const user = await userStorage.sayHi(result);
+
+                alert(`당신에게 인사합니다! ${user.userName}님 ${user.greetings}`); // 성공적으로 됐을때의 문구
+                // 각각 searchUser 와 sayHi에서 반환한 userName과 result(==greetings)를 user에 찍어서 출력
+
+            } catch (errorMsg){
+                console.error(errorMsg);
+                // error가 있을때 각각 searchUser 와 sayHi에서 정의한 error문구가 출력됨
+            }
+        }
+
+        sayHello();
+    </script>
+</body>
+</html>

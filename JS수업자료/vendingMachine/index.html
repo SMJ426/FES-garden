@@ -17,7 +17,7 @@
 
 <body>
   <h1>
-    <img src="./image/logo.png" alt="cola cola">
+    <img src="./img/cola-logo.png" alt="cola cola">
   </h1>
   <main>
     <section class="section1">
@@ -27,7 +27,7 @@
         <li>
           <!-- JS : 클래스 on 유/무 제어 -->
           <button type="button" class="btn-cola on">
-            <img src="./image/Original.png" alt="" />
+            <img src="./img/cola-original.png" alt="" />
             <span class="cola-name">Original_Cola</span>
             <strong class="cola-price">1000원</strong>
           </button>
@@ -35,35 +35,35 @@
         <li>
           <button type="button" class="btn-cola" disabled>
             <strong class="soldout">품절</strong>
-            <img src="./image/Violet.png" alt="" />
+            <img src="./img/cola-violet.png" alt="" />
             <span class="cola-name">Violet_Cola</span>
             <strong class="cola-price">1000원</strong>
           </button>
         </li>
         <li>
           <button type="button" class="btn-cola">
-            <img src="./image/Yellow.png" alt="" />
+            <img src="./img/cola-yellow.png" alt="" />
             <span class="cola-name">Yellow_Cola</span>
             <strong class="cola-price">1000원</strong>
           </button>
         </li>
         <li>
           <button type="button" class="btn-cola">
-            <img src="./image/Cool.png" alt="" />
+            <img src="./img/cola-cool.png" alt="" />
             <span class="cola-name">Cool_Cola</span>
             <strong class="cola-price">1000원</strong>
           </button>
         </li>
         <li>
           <button type="button" class="btn-cola on">
-            <img src="./image/Green.png" alt="" />
+            <img src="./img/cola-green.png" alt="" />
             <span class="cola-name">Green_Cola</span>
             <strong class="cola-price">1000원</strong>
           </button>
         </li>
         <li>
           <button type="button" class="btn-cola">
-            <img src="./image/Orange.png" alt="" />
+            <img src="./img/cola-orange.png" alt="" />
             <span class="cola-name">Orange_Cola</span>
             <strong class="cola-price">1000원</strong>
           </button>
@@ -84,7 +84,7 @@
         <h2 class="a11y-hidden">장바구니</h2>
         <ul class="get-list">
           <li>
-            <img src="./image/Original.png" alt="">
+            <img src="./img/cola-original.png" alt="">
             Original_Cola
             <strong>
               1
@@ -92,21 +92,14 @@
             </strong>
           </li>
           <li>
-            <img src="./image/Green.png" alt="">
+            <img src="./img/cola-green.png" alt="">
             Green_Cola
             <strong>
               2
               <span class="a11y-hidden">개</span>
             </strong>
           </li>
-          <li>
-            <img src="./image/Green.png" alt="">
-            Green_Cola
-            <strong>
-              2
-              <span class="a11y-hidden">개</span>
-            </strong>
-          </li>
+
         </ul>
         <button type="button" class="btn-get">획득</button>
       </div>
@@ -121,7 +114,7 @@
       <h2>획득한 음료</h2>
       <ul class="get-list">
         <li>
-          <img src="./image/Original.png" alt="">
+          <img src="./img/cola-original.png" alt="">
           Original_Cola
           <strong>
             1
@@ -129,7 +122,7 @@
           </strong>
         </li>
         <li>
-          <img src="./image/Green.png" alt="">
+          <img src="./img/cola-green.png" alt="">
           Green_Cola
           <strong>
             2
@@ -137,7 +130,7 @@
           </strong>
         </li>
         <li>
-          <img src="./image/Orange.png" alt="">
+          <img src="./img/cola-orange.png" alt="">
           Orange_Cola
           <strong>
             1
@@ -145,21 +138,25 @@
           </strong>
         </li>
         <li>
-          <img src="./image/Violet.png" alt="">
+          <img src="./img/cola-violet.png" alt="">
           Violet_Cola
           <strong>
             5
             <span class="a11y-hidden">개</span>
           </strong>
         </li>
-
       </ul>
       <p class="total-price">총금액 : 9,000 원</p>
     </section>
   </main>
 
-  <script src="js/colaGenerator.js"></script>
-  
+
+  <!-- <script src="js/colaGenerator.js"></script> -->
+  <script type="module" src="index.js"></script>
+  <!-- <script>
+    const colaGenerator = new ColaGenerator();
+    colaGenerator.loadData();
+  </script> -->
 </body>
 
 </html>
