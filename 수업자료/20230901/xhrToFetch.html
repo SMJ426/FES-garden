@@ -60,7 +60,7 @@
                     requestObj.onreadystatechange = () => {
                         if (requestObj.readyState === 4 && requestObj.status === 200) {
                             const result = JSON.parse(requestObj.responseText).greetings.find((item) => {
-                                return item.userName === user
+                                return item.userName === user   
                             });
 
                             // 사용자가 입력한 유저 이름과 일치하는 인사말이 존재한다면 
