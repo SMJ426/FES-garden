@@ -32,7 +32,7 @@ class ColaGenerator {
   //     </li>
 
   colaFactory(data) {
-      const docFrag = new DocumentFragment();
+      const docFrag = new DocumentFragment(); // 밑에 append를 통해 list들을 fragment에 다 모아두고 마지막에 fragment를 한번만 출력하는것 => 성능 최적화
       data.forEach((el) => {
           const item = document.createElement('li');
           const itemTemplate = `<button type="button" class="btn-cola on">
