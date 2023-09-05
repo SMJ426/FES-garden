@@ -162,7 +162,7 @@ class VendingMachineFunc {
         this.btnGet.addEventListener('click', () => {
             const itemStagedList = this.stagedList.querySelectorAll('li');
             const itemGetList = this.getList.querySelectorAll('li');
-
+            let totalPrice = 0;
             // 장바구니 아이템을 획득 목록으로 이동하기
             // this.getList.append(...itemStagedList);
 
@@ -192,11 +192,11 @@ class VendingMachineFunc {
 
             // 획득한 음료 리스트를 순환하면서 총 금액을 계산합니다.
             this.getList.querySelectorAll('li').forEach((itemGet) => {
-                
-            })
+                totalPrice += parseInt(itemGet.dataset.price) * parseInt(itemGet.querySelector('strong').firstChild.textContent);
+            });
+
+            this.txtTotal.textContent = `총 금액 : ${new Intl.NumberFormat().format(totalPrice)} 원`;
         });
-
-
     }
 }
 
