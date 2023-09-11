@@ -6,12 +6,17 @@ function Resume(props) {
     // let like = 0;
 
     // console.log("useState : ", useState(0));
-    let [like, setLike] = useState(0);
+    let [like, setLike] = useState("");
 
     function clickLike() {
         // like += 1;
-        setLike(like + 1);
-        console.log(like);
+        if(like === ""){
+        setLike("like");
+        } else {
+            setLike("");
+        }
+
+        console.log(like)
     }
 
     return (
