@@ -20,7 +20,7 @@ function Hello(props) {
   return (
     <div>
       {numComponentsArray}
-    </div>
+    </div>  
   )
 }
 
