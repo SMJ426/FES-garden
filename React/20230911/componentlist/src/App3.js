@@ -27,7 +27,8 @@ export default function App3() {
 
         console.log(`id : ${id}, pw : ${pw}`);
     }
-
+    
+    // onsubmit => form을 전송하기 전에 어떤 작업을 할 수 있음.
     return (
         <form onSubmit={handleLoginSubmit}>
             <label>
