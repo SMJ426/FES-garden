@@ -4,6 +4,7 @@ import Question from "./Components/Question";
 
 const App = () => {
     return (
+        
         <>
         <nav className={styles.box}>
             <ul>
