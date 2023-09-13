@@ -39,7 +39,7 @@ const NavBar = () => {
 
 export default function App4() {
     return (
-        // &&: 첫번째 falsy 값을 반환하거나 혹은 마지막 truthy 값ㅇㄹ 반환합니다.
+        // &&: 첫번째 falsy 값을 반환하거나 혹은 마지막 truthy 값을 반환합니다.
         true && 1 && false && <NavBar />
     )
 }
