@@ -6,7 +6,8 @@ import App2 from "./App2"
 import App3 from "./App3"
 import Pet from "./Pet"
 import App4 from "./App4";
+import Pet from "./Pet";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<App4 />);
+root.render(<Pet />);

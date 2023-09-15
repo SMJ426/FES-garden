@@ -1,0 +1,32 @@
+body{
+    background: #5B2386;
+    text-align: center;
+}
+
+.headerWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.imgWrapper{
+    margin-top: 3%;
+}
+.imgClock{
+    
+}
+
+.imgText{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 45px;
+}
+
+.headerText {
+    font-family: 'OTEnjoystoriesBA';
+    font-size: 36px;
+}
+
+.textWrapper>*{
+    display: inline;
+}
