@@ -1,14 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 
 function UserItem({user}){
+
+    const [change, setChange] = useState(false);
+    
     return(
-        <li>
+        <li onClick={() => setChange(!change)}>
             {user.name}
-            <div>
+            {change ? <div>
                 <div>email: {user.email}</div>
                 <div>job: {user.job}</div>
-            </div>
+            </div> : null}
+            
         </li>
     )
 }

@@ -3,9 +3,7 @@ import React, { useState } from 'react'
 function UserItem({ user }) {
 
     const [showInfo, setShowInfo] = useState(false);
-    const [like, setLike] = useState(0);
-    setLike(like + 1)
-    
+
 
     return (
         <li onClick={() => setShowInfo(!showInfo)}>
