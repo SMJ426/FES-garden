@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import "./Main.css";
 
-export default function Main() {
+export default function Main({ setModalShow }) {
     const [field, setField] = useState("");
     const [time, setTime] = useState(0);
-    const [day, setDay] = useState(0);
-
-    console.log(typeof time);
+    const [day, setDay] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -40,19 +38,26 @@ export default function Main() {
                     나는 며칠 동안 훈련을 해야 1만 시간이 될까?
                 </button>
             </form>
-            <section className="cont-result">
-                <h2 className="a11y">결과 확인</h2>
-                <p className="txt-wannabe">
-                    당신은 <strong>{field}</strong> 전문가가 되기 위해서
-                    <br /> 대략 <strong>{day}</strong>일 이상 훈련하셔야됩니다.
-                </p>
-                <button type="button" className="btn-go">
-                    훈련하러가기 GO!GO!
-                </button>
-                <button type="button" className="btn-share">
-                    공유하기
-                </button>
-            </section>
+            {day && (
+                <section className="cont-result">
+                    <h2 className="a11y">결과 확인</h2>
+                    <p className="txt-wannabe">
+                        당신은 <strong>{field}</strong> 전문가가 되기 위해서
+                        <br /> 대략 <strong>{day}</strong>일 이상
+                        훈련하셔야됩니다.
+                    </p>
+                    <button
+                        type="button"
+                        className="btn-go"
+                        onClick={() => setModalShow(true)}
+                    >
+                        훈련하러가기 GO!GO!
+                    </button>
+                    <button type="button" className="btn-share">
+                        공유하기
+                    </button>
+                </section>
+            )}
         </main>
     );
 }
