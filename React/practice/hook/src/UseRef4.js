@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-const UseRef3 = () => {
+const UseRef4 = () => {
     const emailInput = useRef(null)
     const pwInput = useRef(null)
 
@@ -9,6 +9,15 @@ const UseRef3 = () => {
 
     const inputCheck = (e) => {
         e.preventDefault();
+        if(emailInput.current.value === ''){
+            alert('이메일을 입력해주세요')
+            emailInput.current.focus();
+            return;
+        }else if(pwInput.current.value === ''){
+            alert('비밀번호를 입력해주세요')
+            pwInput.current.focus();
+            return;
+        }
         setEmailValue(emailInput.current.value)
         setPwValue(pwInput.current.value)
     };
@@ -31,4 +40,4 @@ const UseRef3 = () => {
   );
 };
 
-export default UseRef3;
+export default UseRef4;
