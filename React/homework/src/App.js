@@ -3,8 +3,22 @@ import { createGlobalStyle } from "styled-components";
 import Header from "./components/Header/Header";
 import InputInfo from "./components/InputInfo/InputInfo";
 import Footer from "./components/Footer/Footer";
+import Buttons from "./components/Buttons/Buttons";
+import Modal from "./components/Modal/Modal";
 
 const GlobalStyle = createGlobalStyle`
+    @font-face {
+    font-family: 'EnjoyStories';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/tvn/EnjoyStoriesMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/tvn/EnjoyStoriesMedium.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/tvn/EnjoyStoriesMedium.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/tvn/EnjoyStoriesMedium.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/tvn/EnjoyStoriesMedium.ttf') format("truetype");
+    font-display: swap;
+}
+
     @font-face {
         font-family: 'OTEnjoystoriesBA';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
@@ -35,12 +49,14 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function App() {
-    return (
-        <div>
-            <GlobalStyle />
-            <Header />
-            <InputInfo />
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      <GlobalStyle />
+      <Header />
+      <InputInfo />
+      <Buttons />
+      <Modal />
+      <Footer />
+    </div>
+  );
 }

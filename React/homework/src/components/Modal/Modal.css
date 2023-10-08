@@ -1,0 +1,52 @@
+.wrapper-modal {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px;
+  border-radius: 56px;
+}
+.title-cheer,
+.text-cheer {
+  color: #5b2386;
+  text-align: center;
+  font-family: EnjoyStories;
+}
+.title-cheer {
+  margin: 0;
+  padding: 0;
+  font-size: 96px;
+  font-weight: 700;
+}
+.text-cheer {
+  margin: 0;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 700;
+}
+.img-char {
+  width: 50%;
+  height: 40%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.btn-start {
+  margin: 30px auto;
+  width: fit-content;
+  padding: 21px 49px;
+  border-radius: 56px;
+  background: #fcee21;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #5b2386;
+  text-align: center;
+  font-family: Gmarket Sans;
+  font-size: 24px;
+  font-weight: 700;
+}

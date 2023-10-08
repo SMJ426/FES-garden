@@ -1,67 +1,51 @@
 .formWrapper {
-    /* background-color: yellowgreen; */
-    border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10%;
-    margin-top: 70px;
-    color: #fff;
-    font-family: "Gmarket";
-    font-size: 20px;
-    font-weight: 400;
+  /* background-color: yellowgreen; */
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  margin-top: 70px;
+  color: #fff;
+  font-family: "Gmarket";
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .input {
-    width: 228px;
-    height: 57px;
-    flex-shrink: 0;
-    border-radius: 7px;
-    background: #fff;
-    border: none;
+  width: 228px;
+  height: 57px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: #fff;
+  border: none;
 
-    color: #babcbe;
-    text-align: center;
-    font-family: "Gmarket Sans";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
+  color: #babcbe;
+  text-align: center;
+  font-family: "Gmarket Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .btnSubmmit {
-    padding: 21px 49px;
-    width: fit-content;
-    margin: 90px auto;
-    background: #fcee21;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-    color: #5b2386;
-    border: none;
-    border-radius: 56px;
-    text-align: center;
-    font-family: "Gmarket Sans";
-    font-size: 24px;
-    font-weight: 700;
+  padding: 21px 49px;
+  width: fit-content;
+  margin: 90px auto;
+  background: #fcee21;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  color: #5b2386;
+  border: none;
+  border-radius: 56px;
+  text-align: center;
+  font-family: "Gmarket Sans";
+  font-size: 24px;
+  font-weight: 700;
 }
 .clickImg {
-    display: inline-block;
-    vertical-align: bottom;
-    width: 64px;
-    height: 72px;
-    padding-left: 10px;
-    padding-bottom: 75px;
-}
-
-/* 출력 문구 & 출력 버튼 */
-.text-sec {
-    color: #fff;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-.text-sec strong {
-    color: #fff;
-    font-size: 72px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 64px;
+  height: 72px;
+  padding-left: 10px;
+  padding-bottom: 75px;
 }

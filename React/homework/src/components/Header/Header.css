@@ -1,33 +1,32 @@
 .headerWrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .imgWrapper {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 .imgText {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    margin-top: 45px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 45px;
 }
 
 .headerText {
-    font-family: "OTEnjoystoriesBA";
-    font-size: 36px;
-    color: #f5df4d;
+  font-family: "OTEnjoystoriesBA";
+  font-size: 36px;
+  color: #f5df4d;
 }
 
 .text {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .textWrapper {
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
