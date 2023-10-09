@@ -16,7 +16,7 @@ export default function Header() {
       <div className="textWrapper">
         <img className="imgLeft" alt="left" src="/img/left.png" />
         <p className="text">
-          <strong>1만 시간의 법칙</strong>은 <br />
+          <strong className="text-strong">1만 시간의 법칙</strong>은 <br />
           어떤 분야의 전문가가 되기 위해서는 <br />
           최소한 1만 시간의 훈련이 필요하다는 법칙이다.
         </p>

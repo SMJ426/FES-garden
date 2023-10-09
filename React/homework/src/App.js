@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import Header from "./components/Header/Header";
 import InputInfo from "./components/InputInfo/InputInfo";
 import Footer from "./components/Footer/Footer";
-import Buttons from "./components/Buttons/Buttons";
 import Modal from "./components/Modal/Modal";
 
 const GlobalStyle = createGlobalStyle`
@@ -49,13 +48,13 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function App() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div>
       <GlobalStyle />
       <Header />
-      <InputInfo />
-      <Buttons />
-      <Modal />
+      <InputInfo setShowModal={setShowModal} />
+      {showModal && <Modal setShowModal={setShowModal} />}
       <Footer />
     </div>
   );
